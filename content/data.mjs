@@ -39,7 +39,7 @@ export const ui = {
       dataAnalytics: "Data & Analytics",
       toolsCollaboration: "Tools & Collaboration"
     },
-    common: { featured: "Featured", year: "Year", tools: "Tools", readCase: "View case study", openPresentation: "Open presentation", openPdf: "Open PDF", github: "View GitHub", colab: "Open in Google Colab", comingSoon: "Content coming soon", back: "Back", next: "Next", issuer: "Issuer", authors: "Authors", topic: "Topic", abstract: "Abstract" },
+    common: { featured: "Featured", year: "Year", tools: "Tools", readCase: "View case study", openPresentation: "Open presentation", openPdf: "Open PDF", github: "View GitHub", colab: "Open in Google Colab", comingSoon: "Content coming soon", viewCertificate: "View certificate", validUntil: "Valid until", institution: "Institution", back: "Back", next: "Next", issuer: "Issuer", authors: "Authors", topic: "Topic", abstract: "Abstract" },
     project: { overview: "Executive overview", problem: "Business / analytical problem", objective: "Objective", approach: "Approach", methodology: "Methodology", insights: "Key insights", results: "Results / conclusions", technical: "Technical notes" },
     pages: {
       projectsTitle: "Projects", projectsIntro: "Selected analytical and technical work, presented through the business question first and the implementation second.",
@@ -84,7 +84,7 @@ export const ui = {
       dataAnalytics: "Data & Analytics",
       toolsCollaboration: "Tools & Collaboration"
     },
-    common: { featured: "In evidenza", year: "Anno", tools: "Strumenti", readCase: "Apri il case study", openPresentation: "Apri presentazione", openPdf: "Apri PDF", github: "Apri GitHub", colab: "Apri in Google Colab", comingSoon: "Contenuto in arrivo", back: "Indietro", next: "Avanti", issuer: "Ente", authors: "Autori", topic: "Tema", abstract: "Abstract" },
+    common: { featured: "In evidenza", year: "Anno", tools: "Strumenti", readCase: "Apri il case study", openPresentation: "Apri presentazione", openPdf: "Apri PDF", github: "Apri GitHub", colab: "Apri in Google Colab", comingSoon: "Contenuto in arrivo", viewCertificate: "Vedi certificato", validUntil: "Valido fino al", institution: "Istituzione", back: "Indietro", next: "Avanti", issuer: "Ente", authors: "Autori", topic: "Tema", abstract: "Abstract" },
     project: { overview: "Executive overview", problem: "Problema business / analitico", objective: "Obiettivo", approach: "Approccio", methodology: "Metodologia", insights: "Insight principali", results: "Risultati / conclusioni", technical: "Note tecniche" },
     pages: {
       projectsTitle: "Progetti", projectsIntro: "Lavori analitici e tecnici presentati partendo dalla domanda di business e arrivando poi all'implementazione.",
@@ -129,7 +129,7 @@ export const ui = {
       dataAnalytics: "Data & Analytics",
       toolsCollaboration: "Tools & Collaboration"
     },
-    common: { featured: "Ausgewählt", year: "Jahr", tools: "Tools", readCase: "Case Study öffnen", openPresentation: "Präsentation öffnen", openPdf: "PDF öffnen", github: "GitHub öffnen", colab: "In Google Colab öffnen", comingSoon: "Inhalt folgt", back: "Zurück", next: "Weiter", issuer: "Anbieter", authors: "Autor:innen", topic: "Thema", abstract: "Abstract" },
+    common: { featured: "Ausgewählt", year: "Jahr", tools: "Tools", readCase: "Case Study öffnen", openPresentation: "Präsentation öffnen", openPdf: "PDF öffnen", github: "GitHub öffnen", colab: "In Google Colab öffnen", comingSoon: "Inhalt folgt", viewCertificate: "Zertifikat ansehen", validUntil: "Gültig bis", institution: "Institution", back: "Zurück", next: "Weiter", issuer: "Anbieter", authors: "Autor:innen", topic: "Thema", abstract: "Abstract" },
     project: { overview: "Executive Overview", problem: "Business- / Analyseproblem", objective: "Ziel", approach: "Vorgehen", methodology: "Methodik", insights: "Zentrale Erkenntnisse", results: "Ergebnisse / Fazit", technical: "Technische Hinweise" },
     pages: {
       projectsTitle: "Projekte", projectsIntro: "Analytische und technische Arbeiten, bei denen zuerst die Business-Frage und danach die Umsetzung im Vordergrund steht.",
@@ -153,6 +153,7 @@ export const projects = [
     slug: "crunchbase-startup-fundraising-analysis",
     featured: true,
     year: "2026",
+    cover: "/images/projects/crunchbase-startup-analysis.svg",
     title: { en: "Crunchbase Startup Fundraising Analysis", it: "Crunchbase Startup Fundraising Analysis", de: "Crunchbase Startup Fundraising Analysis" },
     description: {
       en: "A memory-conscious data engineering and analysis pipeline for historical Crunchbase startup investment data, using chunked processing, type optimisation and SQLite.",
@@ -199,6 +200,7 @@ export const projects = [
     slug: "nasdaq-financial-data-analysis",
     featured: true,
     year: "2026",
+    cover: "/images/projects/nasdaq-financial-analysis.svg",
     title: { en: "Nasdaq Financial Data Analysis", it: "Nasdaq Financial Data Analysis", de: "Nasdaq Financial Data Analysis" },
     description: {
       en: "A Python analysis of Accrued Expenses Turnover across companies and countries from 2010 to 2015 using Nasdaq Data Link.",
@@ -245,6 +247,7 @@ export const projects = [
     slug: "project-03",
     featured: true,
     year: "—",
+    cover: "/images/projects/project-03.svg",
     title: { en: "Project 03", it: "Progetto 03", de: "Projekt 03" },
     description: { en: "Reserved for the next analytical project.", it: "Spazio riservato al prossimo progetto analitico.", de: "Platzhalter für das nächste Analyseprojekt." },
     tools: [], github: "", colab: "", placeholder: true
@@ -252,48 +255,173 @@ export const projects = [
 ];
 
 export const presentations = [
-  "SmartEats Business Plan",
-  "ReguFlow Transition",
-  "ZKB AlpineBridge",
-  "Economic Impacts of Airbnb",
-  "ICT Threats"
-].map((title, index) => ({
-  slug: ["smarteats-business-plan", "reguflow-transition", "zkb-alpinebridge", "economic-impacts-of-airbnb", "ict-threats"][index],
-  title,
-  date: "—",
-  featured: index < 3,
-  description: {
-    en: "Presentation placeholder. Add the final description and PDF when ready.",
-    it: "Placeholder della presentazione. Aggiungi descrizione finale e PDF quando disponibili.",
-    de: "Platzhalter für die Präsentation. Beschreibung und PDF können später ergänzt werden."
+  {
+    slug: "smarteats-business-plan",
+    title: "SmartEats Business Plan",
+    date: "April 2025",
+    featured: true,
+    cover: "/images/presentations/smarteats-business-plan.jpg",
+    pdf: "/pdfs/presentations/smarteats-business-plan.pdf",
+    description: {
+      en: "A complete business plan for a health-focused food delivery concept in the Zurich region, covering market positioning, competitive analysis, go-to-market, operations and financial planning.",
+      it: "Business plan completo per un concept di healthy food delivery nella regione di Zurigo, con posizionamento di mercato, analisi competitiva, go-to-market, operations e pianificazione finanziaria.",
+      de: "Vollständiger Businessplan für ein gesundheitsorientiertes Food-Delivery-Konzept in der Region Zürich, inklusive Marktpositionierung, Wettbewerbsanalyse, Go-to-Market, Operations und Finanzplanung."
+    }
   },
-  pdf: ""
-}));
+  {
+    slug: "reguflow-transition",
+    title: "The ReguFlow Transformation",
+    date: "May 2026",
+    featured: true,
+    cover: "/images/presentations/reguflow-transformation.jpg",
+    pdf: "/pdfs/presentations/reguflow-transformation.pdf",
+    description: {
+      en: "A transformation case moving a regulatory consultancy from labor-intensive manual work toward an automation-led SaaS model, including operating model, stakeholder value, go-to-market and financial logic.",
+      it: "Caso di trasformazione di una società di consulenza regolamentare da un modello manuale e labour-intensive verso un modello SaaS guidato dall'automazione, includendo operating model, stakeholder value, go-to-market e logica finanziaria.",
+      de: "Transformationsfall einer Regulatory-Consulting-Firma vom arbeitsintensiven manuellen Modell hin zu einem automatisierungsgetriebenen SaaS-Modell mit Operating Model, Stakeholder Value, Go-to-Market und Finanzlogik."
+    }
+  },
+  {
+    slug: "zkb-alpinebridge",
+    title: "Project AlpineBridge",
+    date: "June 2026",
+    featured: true,
+    cover: "/images/presentations/zkb-alpinebridge.jpg",
+    pdf: "/pdfs/presentations/zkb-alpinebridge.pdf",
+    description: {
+      en: "A governed AI-assisted concept for SME credit-file preparation at ZKB, designed to reduce document friction and manual re-keying while keeping credit decisions under accountable human ownership.",
+      it: "Concept AI-assisted e governato per la preparazione dei credit file SME in ZKB, pensato per ridurre frizioni documentali e re-keying manuale mantenendo le decisioni di credito sotto responsabilità umana.",
+      de: "Governed-AI-Konzept zur Vorbereitung von SME-Kreditdossiers bei ZKB, das Dokumentenfriktion und manuelle Dateneingabe reduziert, während Kreditentscheidungen unter klarer menschlicher Verantwortung bleiben."
+    }
+  },
+  {
+    slug: "economic-impacts-of-airbnb",
+    title: "Economic Impacts of Sharing Platforms",
+    date: "September 2026",
+    featured: false,
+    cover: "/images/presentations/economic-impacts-sharing-platforms.jpg",
+    pdf: "/pdfs/presentations/economic-impacts-sharing-platforms.pdf",
+    description: {
+      en: "A University of Zurich real-estate economics presentation on short-term rentals and Airbnb, examining accommodation competition, rents and prices, policy options and a Zurich case study.",
+      it: "Presentazione di Real Estate Economics all'Università di Zurigo sugli affitti a breve termine e Airbnb, con analisi della concorrenza ricettiva, effetti su affitti e prezzi, opzioni regolatorie e case study su Zurigo.",
+      de: "Präsentation im Bereich Real Estate Economics an der Universität Zürich zu Kurzzeitvermietungen und Airbnb, mit Wettbewerb im Beherbergungsmarkt, Miet- und Preiseffekten, Regulierungsoptionen und Fallstudie Zürich."
+    }
+  },
+  {
+    slug: "ict-threats",
+    title: "ICT Threats",
+    date: "2023–2024",
+    featured: false,
+    cover: "/images/presentations/ict-threats-presentation.jpg",
+    pdf: "/pdfs/presentations/ict-threats-presentation.pdf",
+    description: {
+      en: "The presentation developed for my bachelor's thesis, exploring the technological, economic, political and social implications of emerging technologies, from AI and IoT to cybersecurity and digital governance.",
+      it: "Presentazione sviluppata per la mia tesi di laurea, dedicata alle implicazioni tecnologiche, economiche, politiche e sociali delle tecnologie emergenti, dall'AI e IoT alla cybersecurity e governance digitale.",
+      de: "Präsentation zu meiner Bachelorarbeit über technologische, wirtschaftliche, politische und soziale Auswirkungen neuer Technologien - von KI und IoT bis Cybersecurity und digitaler Governance."
+    }
+  }
+];
 
 export const research = [
-  "ICT Threats",
-  "Responsible AI and Data Governance in Leadership",
-  "AI in Sustainable Finance"
-].map((title, index) => ({
-  slug: ["ict-threats", "responsible-ai-data-governance-leadership", "ai-sustainable-finance"][index],
-  title,
-  year: "—",
-  featured: true,
-  authors: "Ciprian Loghin",
-  topic: "—",
-  abstract: {
-    en: "Research entry placeholder. The final abstract and PDF can be added without changing the page layout.",
-    it: "Placeholder del lavoro di ricerca. Abstract e PDF finali possono essere aggiunti senza modificare il layout.",
-    de: "Platzhalter für den Research-Eintrag. Abstract und PDF können später ergänzt werden, ohne das Layout zu ändern."
+  {
+    slug: "responsible-ai-data-governance-leadership",
+    title: "Responsible AI and Data Governance in Leadership",
+    year: "2026",
+    featured: true,
+    authors: "Ciprian Loghin",
+    institution: "University of Zurich",
+    topic: "AI Governance · Digital Leadership",
+    cover: "/images/research/responsible-ai-data-governance.jpg",
+    pdf: "/pdfs/research/responsible-ai-data-governance.pdf",
+    abstract: {
+      en: "A review of responsible AI as a leadership capability, connecting explainability, bias mitigation, data stewardship, accountability and human review with emerging legal and organizational governance requirements.",
+      it: "Analisi della Responsible AI come capacità di leadership, collegando explainability, mitigazione dei bias, data stewardship, accountability e human review ai requisiti emergenti di governance legale e organizzativa.",
+      de: "Analyse von Responsible AI als Führungskompetenz, die Erklärbarkeit, Bias-Mitigation, Data Stewardship, Accountability und Human Review mit neuen rechtlichen und organisatorischen Governance-Anforderungen verbindet."
+    }
   },
-  pdf: ""
-}));
+  {
+    slug: "ai-sustainable-finance",
+    title: "The Role of Data and AI in Sustainable Finance",
+    year: "2026",
+    featured: true,
+    authors: "Ciprian Loghin",
+    institution: "University of Zurich",
+    topic: "Sustainable Finance · AI · Asset Management",
+    cover: "/images/research/ai-sustainable-finance.jpg",
+    pdf: "/pdfs/research/ai-sustainable-finance.pdf",
+    abstract: {
+      en: "A data-driven asset-management framework for sustainability risk monitoring, examining how AI, alternative data, geospatial evidence and supply-chain signals can improve the measurement of transition risk and portfolio decisions.",
+      it: "Framework data-driven di asset management per il monitoraggio del rischio di sostenibilità, analizzando come AI, alternative data, dati geospaziali e segnali di supply chain possano migliorare la misurazione del transition risk e le decisioni di portafoglio.",
+      de: "Datengetriebenes Asset-Management-Framework zur Überwachung von Nachhaltigkeitsrisiken, mit Fokus auf KI, alternative Daten, Geodaten und Supply-Chain-Signale zur besseren Messung von Transition Risk und Portfolioentscheidungen."
+    }
+  },
+  {
+    slug: "ict-threats",
+    title: "ICT Threats — Aspetti Critici delle Nuove Tecnologie",
+    year: "2024",
+    featured: true,
+    authors: "Ciprian Loghin",
+    institution: "Università degli Studi di Torino",
+    topic: "Technology · Society · Digital Governance",
+    cover: "/images/research/ict-threats-thesis.jpg",
+    pdf: "/pdfs/research/ict-threats-thesis.pdf",
+    abstract: {
+      en: "My bachelor's thesis on the critical implications of emerging technologies, structured across technological, economic, political and social dimensions and covering AI, IoT, blockchain, cybersecurity, Big Tech and digital society.",
+      it: "La mia tesi di laurea sulle implicazioni critiche delle tecnologie emergenti, strutturata nelle dimensioni tecnologica, economica, politica e sociale e dedicata a AI, IoT, blockchain, cybersecurity, Big Tech e società digitale.",
+      de: "Meine Bachelorarbeit über die kritischen Auswirkungen neuer Technologien, gegliedert nach technologischen, wirtschaftlichen, politischen und sozialen Dimensionen, mit Themen wie KI, IoT, Blockchain, Cybersecurity, Big Tech und digitale Gesellschaft."
+    }
+  }
+];
 
 export const certifications = [
-  { title: "PRINCE2 Agile", issuer: "QRP Switzerland", year: "2026" },
-  { title: "Machine Learning in Python", issuer: "DataQuest", year: "2026" },
-  { title: "Junior Data Analyst", issuer: "DataQuest", year: "2026" },
-  { title: "Business Analyst with Power BI", issuer: "DataQuest", year: "2026" },
-  { title: "Probability & Statistics with Python", issuer: "DataQuest", year: "2026" },
-  { title: "ITIL4 DPI", issuer: "QRP Switzerland", year: "2025" }
+  {
+    title: "PRINCE2 Agile Foundation in Project Management",
+    issuer: "PeopleCert",
+    year: "2026",
+    validUntil: "2029",
+    featured: true,
+    cover: "/images/certifications/prince2-agile-foundation.jpg",
+    pdf: "/pdfs/certifications/prince2-agile-foundation.pdf"
+  },
+  {
+    title: "Machine Learning in Python Program",
+    issuer: "Dataquest",
+    year: "2026",
+    featured: true,
+    cover: "/images/certifications/machine-learning-python.jpg",
+    pdf: "/pdfs/certifications/machine-learning-python.pdf"
+  },
+  {
+    title: "Junior Data Analyst Program",
+    issuer: "Dataquest",
+    year: "2026",
+    featured: true,
+    cover: "/images/certifications/junior-data-analyst.jpg",
+    pdf: "/pdfs/certifications/junior-data-analyst.pdf"
+  },
+  {
+    title: "Business Analyst with Power BI Program",
+    issuer: "Dataquest",
+    year: "2026",
+    featured: false,
+    cover: "/images/certifications/business-analyst-power-bi.jpg",
+    pdf: "/pdfs/certifications/business-analyst-power-bi.pdf"
+  },
+  {
+    title: "Probability and Statistics with Python Program",
+    issuer: "Dataquest",
+    year: "2026",
+    featured: false,
+    cover: "/images/certifications/probability-statistics-python.jpg",
+    pdf: "/pdfs/certifications/probability-statistics-python.pdf"
+  },
+  {
+    title: "ITIL 4 Strategist: Direct, Plan and Improve",
+    issuer: "PeopleCert",
+    year: "2025",
+    validUntil: "2028",
+    featured: false,
+    cover: "/images/certifications/itil4-direct-plan-improve.jpg",
+    pdf: "/pdfs/certifications/itil4-direct-plan-improve.pdf"
+  }
 ];
