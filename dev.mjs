@@ -4,7 +4,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 execFileSync(process.execPath, ['build.mjs'], { stdio:'inherit' });
 const root=path.resolve('dist');
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.pdf':'application/pdf','.xml':'application/xml','.txt':'text/plain; charset=utf-8'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.pdf':'application/pdf','.xml':'application/xml','.txt':'text/plain; charset=utf-8'};
 http.createServer((req,res)=>{
   let url=decodeURIComponent(req.url.split('?')[0]);
   let file=path.join(root,url);

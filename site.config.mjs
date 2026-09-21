@@ -7,8 +7,11 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/ciprianloghin97/",
   github: "https://github.com/ClPRlAN",
   cvPath: "/Ciprian_Loghin_CV.pdf",
-  heroImage: "/assets/hero-photo-placeholder.svg",
-  logoImage: "/assets/logo-placeholder.svg",
+  // The uploaded filenames were swapped: the "about me" image is the working-at-desk hero,
+  // while "home" is the more formal portrait used on About.
+  heroImage: "/images/ciprian-hero.webp",
+  aboutImage: "/images/ciprian-about.webp",
+  logoImage: "/images/ciprian-logo.webp",
   // Replace YOUR_FORM_ID after creating the free Formspree form.
   formspreeId: "YOUR_FORM_ID"
 };
