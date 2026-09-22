@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nasdaq Financial Data Analysis — Ciprian Loghin</title>
+<meta name="description" content="A Python analysis of Accrued Expenses Turnover across companies and countries from 2010 to 2015 using Nasdaq Data Link.">
+<link rel="canonical" href="https://ciprianloghin.com/projects/nasdaq-financial-data-analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nasdaq Financial Data Analysis — Ciprian Loghin">
+<meta property="og:description" content="A Python analysis of Accrued Expenses Turnover across companies and countries from 2010 to 2015 using Nasdaq Data Link.">
+<meta property="og:url" content="https://ciprianloghin.com/projects/nasdaq-financial-data-analysis">
+<meta property="og:image" content="https://ciprianloghin.com/assets/og-card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nasdaq Financial Data Analysis — Ciprian Loghin">
+<meta name="twitter:description" content="A Python analysis of Accrued Expenses Turnover across companies and countries from 2010 to 2015 using Nasdaq Data Link.">
+<meta name="twitter:image" content="https://ciprianloghin.com/assets/og-card.svg">
+<link rel="alternate" hreflang="en" href="https://ciprianloghin.com/projects/nasdaq-financial-data-analysis">
+<link rel="alternate" hreflang="it" href="https://ciprianloghin.com/it/projects/nasdaq-financial-data-analysis">
+<link rel="alternate" hreflang="de" href="https://ciprianloghin.com/de/projects/nasdaq-financial-data-analysis">
+<link rel="alternate" hreflang="x-default" href="https://ciprianloghin.com/projects/nasdaq-financial-data-analysis">
+<link rel="icon" media="(prefers-color-scheme: light)" href="/favicon-light.png">
+<link rel="icon" media="(prefers-color-scheme: dark)" href="/favicon-dark.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<script>try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/" aria-label="Ciprian Loghin Home"><img src="/images/ciprian-logo.webp" alt=""><span>Ciprian Loghin</span></a>
+    <div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/projects">Projects</a><a href="/presentations">Presentations</a><a href="/research">Research</a><a href="/certifications">Certifications</a><a href="/contact">Contact</a></div>
+    <div class="nav-actions">
+      <a class="cv-btn" href="/Ciprian_Loghin_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      <div class="lang"><button class="lang-btn" aria-expanded="false" aria-label="Language">EN</button><div class="lang-menu"><a href="/projects/nasdaq-financial-data-analysis" hreflang="en">EN</a><a href="/it/projects/nasdaq-financial-data-analysis" hreflang="it">IT</a><a href="/de/projects/nasdaq-financial-data-analysis" hreflang="de">DE</a></div></div>
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">☾</button>
+      <button class="icon-btn menu-btn" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+</header>
+<div class="mobile-menu" aria-label="Mobile navigation"><a href="/">Home</a><a href="/about">About</a><a href="/projects">Projects</a><a href="/presentations">Presentations</a><a href="/research">Research</a><a href="/certifications">Certifications</a><a href="/contact">Contact</a><div class="mobile-sub"><a href="/Ciprian_Loghin_CV.pdf" target="_blank">Download CV</a><a href="/projects/nasdaq-financial-data-analysis">EN</a><a href="/it/projects/nasdaq-financial-data-analysis">IT</a><a href="/de/projects/nasdaq-financial-data-analysis">DE</a><button data-theme-toggle aria-label="Toggle theme">☾</button></div></div>
+<main id="main"><section class="case-hero"><div class="container reveal"><div class="case-meta"><span>2026</span><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Nasdaq Data Link</span></div><h1>Nasdaq Financial Data Analysis</h1><p class="case-summary">A Python analysis of Accrued Expenses Turnover across companies and countries from 2010 to 2015 using Nasdaq Data Link.</p><div class="action-row"><a class="button primary" href="https://github.com/ClPRlAN/nasdaq-financial-data-analysis" target="_blank" rel="noopener">View GitHub ↗</a><a class="button" href="https://colab.research.google.com/github/ClPRlAN/nasdaq-financial-data-analysis/blob/main/nasdaq_financial_data_analysis.ipynb" target="_blank" rel="noopener">Open in Google Colab ↗</a></div></div></section><div class="container case-cover reveal"><img src="/images/projects/nasdaq-financial-analysis.svg" alt="Nasdaq Financial Data Analysis visual"></div><section class="section-sm"><div class="container case-layout"><aside class="case-nav"><a href="#overview">Executive overview</a><a href="#problem">Business / analytical problem</a><a href="#objective">Objective</a><a href="#approach">Approach</a><a href="#methodology">Methodology</a><a href="#insights">Key insights</a><a href="#results">Results / conclusions</a><a href="#technical">Technical notes</a></aside><div class="reveal"><section class="case-section" id="overview"><h2>Executive overview</h2><p>This project uses the Nasdaq Data Link API to analyse Accrued Expenses Turnover and compare how the metric varies across companies, years and countries between 2010 and 2015.</p></section><section class="case-section" id="problem"><h2>Business / analytical problem</h2><p>Financial ratios can vary materially across companies and markets. The analysis needed a clean workflow for retrieving API data, selecting the relevant observations and making cross-company and cross-country differences understandable.</p></section><section class="case-section" id="objective"><h2>Objective</h2><p>Retrieve, clean and explore the metric, then use descriptive statistics and visualisations to identify differences in level and trend.</p></section><section class="case-section" id="approach"><h2>Approach</h2><p>JSON responses from the API were converted into a Pandas DataFrame, cleaned and filtered to the target metric. The analysis then compared company trends and country-level averages.</p></section><section class="case-section" id="methodology"><h2>Methodology</h2><p>Python, Requests and Pandas were used for data retrieval and transformation, while Matplotlib was used for visualisation.</p></section><section class="case-section" id="insights"><h2>Key insights</h2><p>The analysed values were widely dispersed. The dataset mean was about 26.91 versus a median of about 13.75, indicating that relatively high observations influenced the average. In the analysed 2010–2015 sample, the Bahamas had the highest country average, followed by the United States and the United Kingdom.</p></section><section class="case-section" id="results"><h2>Results / conclusions</h2><p>The notebook provides a reproducible path from API retrieval to financial-metric comparison, with clear descriptive outputs and visual summaries.</p></section><section class="case-section" id="technical"><h2>Technical notes</h2><p>Running the notebook requires a Nasdaq Data Link API key configured as NASDAQ_API_KEY in Google Colab Secrets. The key is not stored in the repository.</p></section></div></div></section></main>
+<footer class="footer"><div class="container footer-inner"><span>© 2026 Ciprian Loghin</span><div class="footer-links"><a href="https://www.linkedin.com/in/ciprianloghin97/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/ClPRlAN" target="_blank" rel="noopener">GitHub</a><a href="mailto:cloghin16@gmail.com">cloghin16@gmail.com</a></div></div></footer>
+<script src="/site.js" defer></script>
+</body></html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crunchbase Startup Fundraising Analysis — Ciprian Loghin</title>
+<meta name="description" content="Pipeline di data engineering e analisi per dati storici di investimento Crunchbase, progettata per contenere l&#39;uso di memoria tramite chunking, ottimizzazione dei tipi e SQLite.">
+<link rel="canonical" href="https://ciprianloghin.com/it/projects/crunchbase-startup-fundraising-analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crunchbase Startup Fundraising Analysis — Ciprian Loghin">
+<meta property="og:description" content="Pipeline di data engineering e analisi per dati storici di investimento Crunchbase, progettata per contenere l&#39;uso di memoria tramite chunking, ottimizzazione dei tipi e SQLite.">
+<meta property="og:url" content="https://ciprianloghin.com/it/projects/crunchbase-startup-fundraising-analysis">
+<meta property="og:image" content="https://ciprianloghin.com/assets/og-card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crunchbase Startup Fundraising Analysis — Ciprian Loghin">
+<meta name="twitter:description" content="Pipeline di data engineering e analisi per dati storici di investimento Crunchbase, progettata per contenere l&#39;uso di memoria tramite chunking, ottimizzazione dei tipi e SQLite.">
+<meta name="twitter:image" content="https://ciprianloghin.com/assets/og-card.svg">
+<link rel="alternate" hreflang="en" href="https://ciprianloghin.com/projects/crunchbase-startup-fundraising-analysis">
+<link rel="alternate" hreflang="it" href="https://ciprianloghin.com/it/projects/crunchbase-startup-fundraising-analysis">
+<link rel="alternate" hreflang="de" href="https://ciprianloghin.com/de/projects/crunchbase-startup-fundraising-analysis">
+<link rel="alternate" hreflang="x-default" href="https://ciprianloghin.com/projects/crunchbase-startup-fundraising-analysis">
+<link rel="icon" media="(prefers-color-scheme: light)" href="/favicon-light.png">
+<link rel="icon" media="(prefers-color-scheme: dark)" href="/favicon-dark.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<script>try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/it" aria-label="Ciprian Loghin Home"><img src="/images/ciprian-logo.webp" alt=""><span>Ciprian Loghin</span></a>
+    <div class="nav-links"><a href="/it">Home</a><a href="/it/about">Chi sono</a><a href="/it/projects">Progetti</a><a href="/it/presentations">Presentazioni</a><a href="/it/research">Ricerca</a><a href="/it/certifications">Certificazioni</a><a href="/it/contact">Contatti</a></div>
+    <div class="nav-actions">
+      <a class="cv-btn" href="/Ciprian_Loghin_CV.pdf" target="_blank" rel="noopener">Scarica CV</a>
+      <div class="lang"><button class="lang-btn" aria-expanded="false" aria-label="Language">IT</button><div class="lang-menu"><a href="/projects/crunchbase-startup-fundraising-analysis" hreflang="en">EN</a><a href="/it/projects/crunchbase-startup-fundraising-analysis" hreflang="it">IT</a><a href="/de/projects/crunchbase-startup-fundraising-analysis" hreflang="de">DE</a></div></div>
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">☾</button>
+      <button class="icon-btn menu-btn" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+</header>
+<div class="mobile-menu" aria-label="Mobile navigation"><a href="/it">Home</a><a href="/it/about">Chi sono</a><a href="/it/projects">Progetti</a><a href="/it/presentations">Presentazioni</a><a href="/it/research">Ricerca</a><a href="/it/certifications">Certificazioni</a><a href="/it/contact">Contatti</a><div class="mobile-sub"><a href="/Ciprian_Loghin_CV.pdf" target="_blank">Scarica CV</a><a href="/projects/crunchbase-startup-fundraising-analysis">EN</a><a href="/it/projects/crunchbase-startup-fundraising-analysis">IT</a><a href="/de/projects/crunchbase-startup-fundraising-analysis">DE</a><button data-theme-toggle aria-label="Toggle theme">☾</button></div></div>
+<main id="main"><section class="case-hero"><div class="container reveal"><div class="case-meta"><span>2026</span><span>Python</span><span>Pandas</span><span>NumPy</span><span>SQLite</span></div><h1>Crunchbase Startup Fundraising Analysis</h1><p class="case-summary">Pipeline di data engineering e analisi per dati storici di investimento Crunchbase, progettata per contenere l&#39;uso di memoria tramite chunking, ottimizzazione dei tipi e SQLite.</p><div class="action-row"><a class="button primary" href="https://github.com/ClPRlAN/crunchbase-startup-analysis" target="_blank" rel="noopener">Apri GitHub ↗</a><a class="button" href="https://colab.research.google.com/github/ClPRlAN/crunchbase-startup-analysis/blob/main/Basics.ipynb" target="_blank" rel="noopener">Apri in Google Colab ↗</a></div></div></section><div class="container case-cover reveal"><img src="/images/projects/crunchbase-startup-analysis.svg" alt="Crunchbase Startup Fundraising Analysis visual"></div><section class="section-sm"><div class="container case-layout"><aside class="case-nav"><a href="#overview">Executive overview</a><a href="#problem">Problema business / analitico</a><a href="#objective">Obiettivo</a><a href="#approach">Approccio</a><a href="#methodology">Metodologia</a><a href="#insights">Insight principali</a><a href="#results">Risultati / conclusioni</a><a href="#technical">Note tecniche</a></aside><div class="reveal"><section class="case-section" id="overview"><h2>Executive overview</h2><p>Il progetto elabora e analizza un archivio storico di investimenti Crunchbase mantenendo sotto controllo l&#39;uso di memoria. Il flusso combina lettura incrementale, pulizia dati, storage relazionale e analisi SQL.</p></section><section class="case-section" id="problem"><h2>Problema business / analitico</h2><p>I grandi file flat possono creare pressione sulla memoria se caricati interamente. La sfida era preservare le informazioni utili sugli investimenti costruendo al tempo stesso un flusso adatto ad ambienti con risorse limitate.</p></section><section class="case-section" id="objective"><h2>Obiettivo</h2><p>Creare una pipeline riproducibile per pulire, ottimizzare e archiviare i dati prima di estrarre insight sul fundraising.</p></section><section class="case-section" id="approach"><h2>Approccio</h2><p>I dati vengono letti in chunk da 5.000 righe, profilati, puliti e ottimizzati nei tipi. I campi ad alto overhead e poco informativi vengono rimossi prima della migrazione in SQLite.</p></section><section class="case-section" id="methodology"><h2>Metodologia</h2><p>Python e Pandas gestiscono l&#39;elaborazione incrementale; SQLite fornisce il livello relazionale. Sono stati creati indici secondari su campi analitici selezionati.</p></section><section class="case-section" id="insights"><h2>Insight principali</h2><p>L&#39;analisi evidenzia una forte concentrazione dei capitali, maggiore attività di finanziamento in settori tecnologici e gli investitori istituzionali con le allocazioni cumulative più elevate nel dataset.</p></section><section class="case-section" id="results"><h2>Risultati / conclusioni</h2><p>Il flusso finale separa preparazione e analisi e crea una base relazionale compatta per query SQL ripetibili con vincoli di memoria.</p></section><section class="case-section" id="technical"><h2>Note tecniche</h2><p>Il repository documenta chunk processing, ottimizzazione dei tipi, gestione dell&#39;encoding e progettazione di schema e indici SQLite.</p></section></div></div></section></main>
+<footer class="footer"><div class="container footer-inner"><span>© 2026 Ciprian Loghin</span><div class="footer-links"><a href="https://www.linkedin.com/in/ciprianloghin97/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/ClPRlAN" target="_blank" rel="noopener">GitHub</a><a href="mailto:cloghin16@gmail.com">cloghin16@gmail.com</a></div></div></footer>
+<script src="/site.js" defer></script>
+</body></html>
