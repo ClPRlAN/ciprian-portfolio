@@ -12,6 +12,6 @@ export const site = {
   heroImage: "/images/ciprian-hero.webp",
   aboutImage: "/images/ciprian-about.webp",
   logoImage: "/images/ciprian-logo.webp",
-  // Replace YOUR_FORM_ID after creating the free Formspree form.
+  homeAboutImage: "/images/ciprian-home-about.webp",
   formspreeId: "mrpbqerd"
 };

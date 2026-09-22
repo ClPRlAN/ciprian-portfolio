@@ -10,8 +10,8 @@ export const ui = {
     hero: {
       degree: "MSc Data Science & Finance · University of Zurich",
       role: "Business & Financial Analyst",
-      slogan: "From data to insight. From insight to decision.",
-      bio: "I believe numbers don't just measure performance — they reveal opportunity. I turn financial data into strategies that drive real growth.",
+      slogan: "Analytics for Real Business Problems",
+      bio: "I use financial and business data to structure complex problems, test assumptions and turn analysis into clear, decision-ready recommendations.",
       cta: "View my work"
     },
     home: {
@@ -48,15 +48,15 @@ export const ui = {
       certificationsTitle: "Certifications", certificationsIntro: "Professional and technical certifications supporting my work across business analysis, data and project environments.",
       contactTitle: "Let's connect.", contactIntro: "For professional opportunities, collaborations or questions about my work, send me a message or use one of the channels below."
     },
-    contact: { name: "Name", email: "Email", subject: "Subject", message: "Message", send: "Send message", reveal: "Reveal number", location: "Location", phone: "Phone", formNotReady: "The contact form is not connected yet. Please use email for now.", success: "Thank you. Your message has been sent." }
+    contact: { name: "Name", email: "Email", subject: "Subject", message: "Message", send: "Send message", reveal: "Reveal number", location: "Location", phone: "Phone", formNotReady: "The contact form is not connected yet. Please use email for now.", success: "Thank you. Your message has been sent.", successTitle: "Message sent.", successBody: "Thank you for getting in touch. I’ll get back to you as soon as possible." }
   },
   it: {
     nav: { home: "Home", about: "Chi sono", projects: "Progetti", presentations: "Presentazioni", research: "Ricerca", certifications: "Certificazioni", contact: "Contatti", cv: "Scarica CV" },
     hero: {
       degree: "MSc Data Science & Finance · University of Zurich",
       role: "Business & Financial Analyst",
-      slogan: "Dai dati agli insight. Dagli insight alle decisioni.",
-      bio: "Credo che i numeri non misurino soltanto la performance: rivelano opportunità. Trasformo i dati finanziari in strategie orientate alla crescita reale.",
+      slogan: "Analisi per problemi aziendali reali",
+      bio: "Uso dati finanziari e aziendali per strutturare problemi complessi, mettere alla prova le ipotesi e trasformare l'analisi in raccomandazioni chiare e pronte a supportare le decisioni.",
       cta: "Scopri il mio lavoro"
     },
     home: {
@@ -93,15 +93,15 @@ export const ui = {
       certificationsTitle: "Certificazioni", certificationsIntro: "Certificazioni professionali e tecniche a supporto del mio lavoro tra business analysis, dati e project environment.",
       contactTitle: "Parliamone.", contactIntro: "Per opportunità professionali, collaborazioni o domande sul mio lavoro, scrivimi tramite il form o uno dei contatti qui sotto."
     },
-    contact: { name: "Nome", email: "Email", subject: "Oggetto", message: "Messaggio", send: "Invia messaggio", reveal: "Mostra numero", location: "Località", phone: "Telefono", formNotReady: "Il form non è ancora collegato. Per ora puoi usare l'email.", success: "Grazie. Il messaggio è stato inviato." }
+    contact: { name: "Nome", email: "Email", subject: "Oggetto", message: "Messaggio", send: "Invia messaggio", reveal: "Mostra numero", location: "Località", phone: "Telefono", formNotReady: "Il form non è ancora collegato. Per ora puoi usare l'email.", success: "Grazie. Il messaggio è stato inviato.", successTitle: "Messaggio inviato.", successBody: "Grazie per avermi contattato. Risponderò al messaggio il prima possibile." }
   },
   de: {
     nav: { home: "Home", about: "Über mich", projects: "Projekte", presentations: "Präsentationen", research: "Research", certifications: "Zertifikate", contact: "Kontakt", cv: "CV herunterladen" },
     hero: {
       degree: "MSc Data Science & Finance · University of Zurich",
       role: "Business & Financial Analyst",
-      slogan: "Von Daten zu Erkenntnissen. Von Erkenntnissen zu Entscheidungen.",
-      bio: "Ich glaube, Zahlen messen nicht nur Performance — sie zeigen Chancen. Ich übersetze Finanzdaten in Strategien, die nachhaltiges Wachstum unterstützen.",
+      slogan: "Analytics für reale Geschäftsprobleme",
+      bio: "Ich nutze Finanz- und Unternehmensdaten, um komplexe Probleme zu strukturieren, Annahmen zu prüfen und Analysen in klare, entscheidungsreife Empfehlungen zu übersetzen.",
       cta: "Meine Arbeit ansehen"
     },
     home: {
@@ -138,7 +138,7 @@ export const ui = {
       certificationsTitle: "Zertifikate", certificationsIntro: "Professionelle und technische Zertifikate für meine Arbeit in Business Analysis, Daten und Projektumgebungen.",
       contactTitle: "Kontakt aufnehmen.", contactIntro: "Für berufliche Möglichkeiten, Kooperationen oder Fragen zu meiner Arbeit kannst du mir über das Formular oder einen der untenstehenden Kanäle schreiben."
     },
-    contact: { name: "Name", email: "E-Mail", subject: "Betreff", message: "Nachricht", send: "Nachricht senden", reveal: "Nummer anzeigen", location: "Standort", phone: "Telefon", formNotReady: "Das Kontaktformular ist noch nicht verbunden. Bitte nutze vorerst die E-Mail-Adresse.", success: "Danke. Deine Nachricht wurde gesendet." }
+    contact: { name: "Name", email: "E-Mail", subject: "Betreff", message: "Nachricht", send: "Nachricht senden", reveal: "Nummer anzeigen", location: "Standort", phone: "Telefon", formNotReady: "Das Kontaktformular ist noch nicht verbunden. Bitte nutze vorerst die E-Mail-Adresse.", success: "Danke. Deine Nachricht wurde gesendet.", successTitle: "Nachricht gesendet.", successBody: "Vielen Dank für Ihre Nachricht. Ich melde mich so bald wie möglich bei Ihnen." }
   }
 };
 
@@ -242,15 +242,6 @@ export const projects = [
         technical: "Zum Ausführen ist ein Nasdaq Data Link API Key erforderlich, der in Google Colab Secrets als NASDAQ_API_KEY hinterlegt wird. Der Schlüssel ist nicht im Repository gespeichert."
       }
     }
-  },
-  {
-    slug: "project-03",
-    featured: true,
-    year: "—",
-    cover: "/images/projects/project-03.svg",
-    title: { en: "Project 03", it: "Progetto 03", de: "Projekt 03" },
-    description: { en: "Reserved for the next analytical project.", it: "Spazio riservato al prossimo progetto analitico.", de: "Platzhalter für das nächste Analyseprojekt." },
-    tools: [], github: "", colab: "", placeholder: true
   }
 ];
 

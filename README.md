@@ -43,9 +43,19 @@ Open `http://localhost:4173`.
 
 ## Contact form
 
-Create a Formspree form and replace `YOUR_FORM_ID` in `site.config.mjs`.
+The contact form is already configured with the current Formspree form ID in `site.config.mjs`. If you ever replace the form, update `formspreeId` there.
 
 ## Cloudflare build
 
 - Build command: `npm run build`
 - Output directory: `dist`
+
+
+## Current visual refinements
+
+- Centered desktop navigation with balanced left/right columns
+- Responsive max-width container for more consistent desktop layouts
+- Light/dark favicons
+- Home About preview image
+- Contact-form success state that replaces the form after submission
+- Two real projects only; no placeholder project

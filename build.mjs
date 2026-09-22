@@ -72,7 +72,9 @@ function layout({ lang, route, title, description, content, pageType='website' }
 <meta name="twitter:image" content="${ogImage}">
 ${Object.keys(languages).map(l=>`<link rel="alternate" hreflang="${l}" href="${site.domain}${currentForLanguage(l,route)}">`).join('\n')}
 <link rel="alternate" hreflang="x-default" href="${site.domain}${currentForLanguage('en',route)}">
-<link rel="icon" href="/assets/logo-placeholder.svg">
+<link rel="icon" media="(prefers-color-scheme: light)" href="/favicon-light.png">
+<link rel="icon" media="(prefers-color-scheme: dark)" href="/favicon-dark.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
 <script>try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
 </head>
@@ -84,7 +86,7 @@ ${Object.keys(languages).map(l=>`<link rel="alternate" hreflang="${l}" href="${s
     <div class="nav-links">${navHtml}</div>
     <div class="nav-actions">
       <a class="cv-btn" href="${site.cvPath}" target="_blank" rel="noopener">${esc(t.nav.cv)}</a>
-      <div class="lang"><button class="lang-btn" aria-expanded="false" aria-label="Language">${languages[lang].label}⌄</button><div class="lang-menu">${languageLinks}</div></div>
+      <div class="lang"><button class="lang-btn" aria-expanded="false" aria-label="Language">${languages[lang].label}</button><div class="lang-menu">${languageLinks}</div></div>
       <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">☾</button>
       <button class="icon-btn menu-btn" aria-expanded="false" aria-label="Open menu">☰</button>
     </div>
@@ -112,14 +114,15 @@ function sectionCards(lang, id, title, items, hrefAll, kind) {
     return card({kicker:kind==='cert'?item.year:(item.year||item.date||kind),title:titleText,description:desc,href,tags:item.tools||[],cover:item.cover||''});
   }).join('');
   const view = card({kicker:'',title:t.home.viewAll,description:'',href:routeFor(lang,hrefAll),inverse:true});
-  return `<section class="section" id="${id}"><div class="container"><div class="section-head reveal"><div><p class="eyebrow">${esc(title)}</p><h2>${esc(title)}</h2></div></div><div class="card-grid">${cards}${view}</div></div></section>`;
+  const cardCount = Math.min(items.length, 3) + 1;
+  return `<section class="section" id="${id}"><div class="container"><div class="section-head reveal"><div><p class="eyebrow">${esc(title)}</p><h2>${esc(title)}</h2></div></div><div class="card-grid card-grid-${cardCount}">${cards}${view}</div></div></section>`;
 }
 
 function home(lang) {
   const t=ui[lang];
   return layout({lang,route:'/',description:'Business & Financial Analyst portfolio of Ciprian Loghin, MSc Data Science & Finance at the University of Zurich.',content:`
 <section class="hero"><div class="hero-grid"><div class="reveal"><div class="hero-name">Ciprian Loghin</div><div class="hero-meta"><span>${esc(t.hero.degree)}</span><span>${esc(t.hero.role)}</span></div><h1 class="hero-title">${esc(t.hero.slogan)}</h1><p class="hero-bio">${esc(t.hero.bio)}</p><a class="text-link" href="#projects">${esc(t.hero.cta)} ↓</a></div><div class="hero-photo-shell reveal"><img class="hero-photo" src="${site.heroImage}" alt="Ciprian Loghin working at a desk"></div></div></section>
-<section class="section" id="about"><div class="container intro-grid"><div><p class="eyebrow reveal">${esc(t.home.aboutEyebrow)}</p></div><div class="intro-copy reveal"><h2>${esc(t.home.aboutTitle)}</h2><p>${esc(t.home.aboutText)}</p><a class="text-link" href="${routeFor(lang,'/about')}">${esc(t.home.moreAbout)} ↗</a></div></div></section>
+<section class="section" id="about"><div class="container intro-grid"><div class="home-about-side reveal"><p class="eyebrow">${esc(t.home.aboutEyebrow)}</p><figure class="home-about-visual"><img src="${site.homeAboutImage}" alt="Business analytics workspace" loading="lazy"></figure></div><div class="intro-copy reveal"><h2>${esc(t.home.aboutTitle)}</h2><p>${esc(t.home.aboutText)}</p><a class="text-link" href="${routeFor(lang,'/about')}">${esc(t.home.moreAbout)} ↗</a></div></div></section>
 ${sectionCards(lang,'projects',t.home.selectedProjects,projects, '/projects','project')}
 ${sectionCards(lang,'presentations',t.home.presentations,presentations, '/presentations','presentation')}
 ${sectionCards(lang,'research',t.home.research,research, '/research','research')}
@@ -127,19 +130,19 @@ ${sectionCards(lang,'certifications',t.home.certifications,certifications, '/cer
 <section class="contact-cta" id="contact"><div class="container contact-cta-inner reveal"><div><p class="eyebrow">${esc(t.nav.contact)}</p><h2>${esc(t.home.contactTitle)}</h2><p class="lede">${esc(t.home.contactText)}</p></div><a class="button primary" href="${routeFor(lang,'/contact')}">${esc(t.home.contactCta)} ↗</a></div></section>`});
 }
 
-function pageHero(title, intro, eyebrow='') { return `<section class="page-hero"><div class="container reveal">${eyebrow?`<p class="eyebrow">${esc(eyebrow)}</p>`:''}<h1>${esc(title)}</h1><p class="lede">${esc(intro)}</p></div></section>`; }
+function pageHero(title, intro, eyebrow='') { return `<section class="page-hero"><div class="container reveal">${eyebrow?`<p class="eyebrow">${esc(eyebrow)}</p>`:''}<h1>${esc(title)}</h1>${intro?`<p class="lede">${esc(intro)}</p>`:''}</div></section>`; }
 
 function aboutPage(lang) {
   const t=ui[lang];
   const skillGroup=(title,items)=>`<div class="skill-group reveal"><h3>${esc(title)}</h3><div class="skill-list">${items.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</div></div>`;
-  const content=`${pageHero(t.about.title,t.about.p1,t.about.eyebrow)}<section class="section-sm"><div class="container about-layout"><figure class="about-portrait reveal"><img src="${site.aboutImage}" alt="Ciprian Loghin at a desk" loading="eager"></figure><div class="about-copy reveal"><p>${esc(t.about.p1)}</p><p>${esc(t.about.p2)}</p><p>${esc(t.about.p3)}</p></div></div><div class="container"><div class="skills">${skillGroup(t.about.businessFinance,skills.business)}${skillGroup(t.about.dataAnalytics,skills.data)}${skillGroup(t.about.toolsCollaboration,skills.tools)}</div></div></section>`;
+  const content=`${pageHero(t.about.title,'',t.about.eyebrow)}<section class="section-sm"><div class="container about-layout"><figure class="about-portrait reveal"><img src="${site.aboutImage}" alt="Ciprian Loghin at a desk" loading="eager"></figure><div class="about-copy reveal"><p>${esc(t.about.p1)}</p><p>${esc(t.about.p2)}</p><p>${esc(t.about.p3)}</p></div></div><div class="container"><div class="skills">${skillGroup(t.about.businessFinance,skills.business)}${skillGroup(t.about.dataAnalytics,skills.data)}${skillGroup(t.about.toolsCollaboration,skills.tools)}</div></div></section>`;
   return layout({lang,route:'/about',title:t.nav.about,description:t.about.p1,content});
 }
 
 function projectsPage(lang) {
   const t=ui[lang];
   const items=projects.map(p=>card({kicker:p.year,title:p.title[lang],description:p.description[lang],href:routeFor(lang,`/projects/${p.slug}`),tags:p.tools,cover:p.cover||''})).join('');
-  return layout({lang,route:'/projects',title:t.pages.projectsTitle,description:t.pages.projectsIntro,content:`${pageHero(t.pages.projectsTitle,t.pages.projectsIntro)}<section class="section-sm"><div class="container list-grid">${items}</div></section>`});
+  return layout({lang,route:'/projects',title:t.pages.projectsTitle,description:t.pages.projectsIntro,content:`${pageHero(t.pages.projectsTitle,t.pages.projectsIntro)}<section class="section-sm"><div class="container list-grid list-grid-projects">${items}</div></section>`});
 }
 function projectPage(lang,p) {
   const t=ui[lang];
@@ -183,7 +186,7 @@ function certificationsPage(lang) {
 function contactPage(lang) {
   const t=ui[lang];
   const endpoint=`https://formspree.io/f/${site.formspreeId}`;
-  const content=`${pageHero(t.pages.contactTitle,t.pages.contactIntro)}<section class="section-sm"><div class="container contact-grid"><form class="contact-form reveal" data-contact-form data-not-ready="${esc(t.contact.formNotReady)}" data-success="${esc(t.contact.success)}" action="${endpoint}" method="POST"><div class="field"><label for="name">${esc(t.contact.name)}</label><input id="name" name="name" required autocomplete="name"></div><div class="field"><label for="email">${esc(t.contact.email)}</label><input id="email" type="email" name="email" required autocomplete="email"></div><div class="field"><label for="subject">${esc(t.contact.subject)}</label><input id="subject" name="subject" required></div><div class="field"><label for="message">${esc(t.contact.message)}</label><textarea id="message" name="message" required></textarea></div><button class="button primary" type="submit">${esc(t.contact.send)} ↗</button><div class="status" role="status" aria-live="polite"></div></form><div class="contact-details reveal"><div class="contact-row"><span>Email</span><a href="mailto:${site.email}">${site.email}</a></div><div class="contact-row"><span>LinkedIn</span><a href="${site.linkedin}" target="_blank">ciprianloghin97 ↗</a></div><div class="contact-row"><span>GitHub</span><a href="${site.github}" target="_blank">ClPRlAN ↗</a></div><div class="contact-row"><span>${esc(t.contact.phone)}</span><span><span data-phone-value>+41 •• ••• •• ••</span> <button class="text-link" style="background:none;border:0;cursor:pointer" data-reveal-phone data-phone="${site.phone}">${esc(t.contact.reveal)}</button></span></div><div class="contact-row"><span>${esc(t.contact.location)}</span><span>${site.location}</span></div></div></div></section>`;
+  const content=`${pageHero(t.pages.contactTitle,t.pages.contactIntro)}<section class="section-sm"><div class="container contact-grid"><div class="contact-form-shell reveal"><form class="contact-form" data-contact-form data-not-ready="${esc(t.contact.formNotReady)}" data-success="${esc(t.contact.success)}" action="${endpoint}" method="POST"><div class="field"><label for="name">${esc(t.contact.name)}</label><input id="name" name="name" required autocomplete="name"></div><div class="field"><label for="email">${esc(t.contact.email)}</label><input id="email" type="email" name="email" required autocomplete="email"></div><div class="field"><label for="subject">${esc(t.contact.subject)}</label><input id="subject" name="subject" required></div><div class="field"><label for="message">${esc(t.contact.message)}</label><textarea id="message" name="message" required></textarea></div><button class="button primary" type="submit">${esc(t.contact.send)} ↗</button><div class="status" role="status" aria-live="polite"></div></form><div class="contact-success" data-contact-success tabindex="-1" hidden><p class="eyebrow">${esc(t.nav.contact)}</p><h2>${esc(t.contact.successTitle)}</h2><p>${esc(t.contact.successBody)}</p></div></div><div class="contact-details reveal"><div class="contact-row"><span>Email</span><a href="mailto:${site.email}">${site.email}</a></div><div class="contact-row"><span>LinkedIn</span><a href="${site.linkedin}" target="_blank">ciprianloghin97 ↗</a></div><div class="contact-row"><span>GitHub</span><a href="${site.github}" target="_blank">ClPRlAN ↗</a></div><div class="contact-row"><span>${esc(t.contact.phone)}</span><span><span data-phone-value>+41 •• ••• •• ••</span> <button class="text-link" style="background:none;border:0;cursor:pointer" data-reveal-phone data-phone="${site.phone}">${esc(t.contact.reveal)}</button></span></div><div class="contact-row"><span>${esc(t.contact.location)}</span><span>${site.location}</span></div></div></div></section>`;
   return layout({lang,route:'/contact',title:t.nav.contact,description:t.pages.contactIntro,content});
 }
 

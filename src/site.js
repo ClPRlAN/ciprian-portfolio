@@ -84,7 +84,15 @@
         const res = await fetch(endpoint, { method: 'POST', body: new FormData(contactForm), headers: { Accept: 'application/json' } });
         if (!res.ok) throw new Error('Request failed');
         contactForm.reset();
-        status.textContent = contactForm.dataset.success || 'Thank you. Your message has been sent.';
+        const successPanel = document.querySelector('[data-contact-success]');
+        contactForm.hidden = true;
+        if (successPanel) {
+          successPanel.hidden = false;
+          requestAnimationFrame(() => successPanel.classList.add('show'));
+          successPanel.focus({ preventScroll: true });
+        } else {
+          status.textContent = contactForm.dataset.success || 'Thank you. Your message has been sent.';
+        }
       } catch (_) {
         status.textContent = 'Unable to send the message right now. Please use email.';
       }
