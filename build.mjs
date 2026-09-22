@@ -115,22 +115,22 @@ function sectionCards(lang, id, title, items, hrefAll, kind) {
   }).join('');
   const view = card({kicker:'',title:t.home.viewAll,description:'',href:routeFor(lang,hrefAll),inverse:true});
   const cardCount = Math.min(items.length, 3) + 1;
-  return `<section class="section" id="${id}"><div class="container"><div class="section-head reveal"><div><p class="eyebrow">${esc(title)}</p><h2>${esc(title)}</h2></div></div><div class="card-grid card-grid-${cardCount}">${cards}${view}</div></div></section>`;
+  return `<section class="section" id="${id}"><div class="container"><div class="section-head reveal"><div><h2>${esc(title)}</h2></div></div><div class="card-grid card-grid-${cardCount}">${cards}${view}</div></div></section>`;
 }
 
 function home(lang) {
   const t=ui[lang];
   return layout({lang,route:'/',description:'Business & Financial Analyst portfolio of Ciprian Loghin, MSc Data Science & Finance at the University of Zurich.',content:`
 <section class="hero"><div class="hero-grid"><div class="reveal"><div class="hero-name">Ciprian Loghin</div><div class="hero-meta"><span>${esc(t.hero.degree)}</span><span>${esc(t.hero.role)}</span></div><h1 class="hero-title">${esc(t.hero.slogan)}</h1><p class="hero-bio">${esc(t.hero.bio)}</p><a class="text-link" href="#projects">${esc(t.hero.cta)} ↓</a></div><div class="hero-photo-shell reveal"><img class="hero-photo" src="${site.heroImage}" alt="Ciprian Loghin working at a desk"></div></div></section>
-<section class="section" id="about"><div class="container intro-grid"><div class="home-about-side reveal"><p class="eyebrow">${esc(t.home.aboutEyebrow)}</p><figure class="home-about-visual"><img src="${site.homeAboutImage}" alt="Business analytics workspace" loading="lazy"></figure></div><div class="intro-copy reveal"><h2>${esc(t.home.aboutTitle)}</h2><p>${esc(t.home.aboutText)}</p><a class="text-link" href="${routeFor(lang,'/about')}">${esc(t.home.moreAbout)} ↗</a></div></div></section>
+<section class="section" id="about"><div class="container intro-grid"><div class="home-about-side reveal"><figure class="home-about-visual"><img src="${site.homeAboutImage}" alt="Business analytics workspace" loading="lazy"></figure></div><div class="intro-copy reveal"><h2>${esc(t.home.aboutTitle)}</h2><p>${esc(t.home.aboutText)}</p><a class="text-link" href="${routeFor(lang,'/about')}">${esc(t.home.moreAbout)} ↗</a></div></div></section>
 ${sectionCards(lang,'projects',t.home.selectedProjects,projects, '/projects','project')}
 ${sectionCards(lang,'presentations',t.home.presentations,presentations, '/presentations','presentation')}
 ${sectionCards(lang,'research',t.home.research,research, '/research','research')}
 ${sectionCards(lang,'certifications',t.home.certifications,certifications, '/certifications','cert')}
-<section class="contact-cta" id="contact"><div class="container contact-cta-inner reveal"><div><p class="eyebrow">${esc(t.nav.contact)}</p><h2>${esc(t.home.contactTitle)}</h2><p class="lede">${esc(t.home.contactText)}</p></div><a class="button primary" href="${routeFor(lang,'/contact')}">${esc(t.home.contactCta)} ↗</a></div></section>`});
+<section class="contact-cta" id="contact"><div class="container contact-cta-inner reveal"><div><h2>${esc(t.home.contactTitle)}</h2><p class="lede">${esc(t.home.contactText)}</p></div><a class="button primary" href="${routeFor(lang,'/contact')}">${esc(t.home.contactCta)} ↗</a></div></section>`});
 }
 
-function pageHero(title, intro, eyebrow='') { return `<section class="page-hero"><div class="container reveal">${eyebrow?`<p class="eyebrow">${esc(eyebrow)}</p>`:''}<h1>${esc(title)}</h1>${intro?`<p class="lede">${esc(intro)}</p>`:''}</div></section>`; }
+function pageHero(title, intro) { return `<section class="page-hero"><div class="container reveal"><h1>${esc(title)}</h1>${intro?`<p class="lede">${esc(intro)}</p>`:''}</div></section>`; }
 
 function aboutPage(lang) {
   const t=ui[lang];
