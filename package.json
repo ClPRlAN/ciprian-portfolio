@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "dev": "node dev.mjs"
+    "dev": "node dev.mjs",
+    "test": "node --test"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "marked": "15.0.12",
+    "sanitize-html": "2.18.1"
   }
 }

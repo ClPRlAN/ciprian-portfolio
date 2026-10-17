@@ -1,0 +1,59 @@
+{
+  "cultural-differences-in-finance": {
+    "repository": "https://github.com/ClPRlAN/Cultural-Diferences-in-Finance",
+    "ref": "main",
+    "commit": "eb82a1c339263b6c1478414c96cd7fbcce91ffc9",
+    "commitDate": "2026-10-17T13:12:04+02:00",
+    "sourcePath": "CulturalDifferencesInFinanceTopicI.ipynb",
+    "sourceUrl": "https://github.com/ClPRlAN/Cultural-Diferences-in-Finance/blob/eb82a1c339263b6c1478414c96cd7fbcce91ffc9/CulturalDifferencesInFinanceTopicI.ipynb",
+    "rawUrl": "https://raw.githubusercontent.com/ClPRlAN/Cultural-Diferences-in-Finance/eb82a1c339263b6c1478414c96cd7fbcce91ffc9/CulturalDifferencesInFinanceTopicI.ipynb",
+    "localFile": "cultural-differences-in-finance.ipynb",
+    "sha256": "f5d7fe248cef11a3c80eff06e9f7b4a458d5334aae5b562e850c6a26b8ba689b",
+    "sizeBytes": 1015726,
+    "cells": 23,
+    "outputMimeTypes": {
+      "text/html": 10,
+      "text/plain": 19,
+      "image/png": 9
+    },
+    "renderMode": "Saved notebook source and outputs; no code execution or live API calls.",
+    "runtimeRequirements": [
+      "Python 3.12 (source kernel 3.12.13)",
+      "numpy",
+      "pandas",
+      "pyreadstat",
+      "statsmodels",
+      "matplotlib",
+      "IPython",
+      "Local survey file data_combined_20.08.2026.sav (not published in source repository)"
+    ]
+  },
+  "nasdaq-financial-data-analysis": {
+    "repository": "https://github.com/ClPRlAN/nasdaq-financial-data-analysis",
+    "ref": "main",
+    "commit": "fc5a621a3869652504041f2ae01bf28f5523861f",
+    "commitDate": "2026-09-17T15:49:20+02:00",
+    "sourcePath": "nasdaq_financial_data_analysis.ipynb",
+    "sourceUrl": "https://github.com/ClPRlAN/nasdaq-financial-data-analysis/blob/fc5a621a3869652504041f2ae01bf28f5523861f/nasdaq_financial_data_analysis.ipynb",
+    "rawUrl": "https://raw.githubusercontent.com/ClPRlAN/nasdaq-financial-data-analysis/fc5a621a3869652504041f2ae01bf28f5523861f/nasdaq_financial_data_analysis.ipynb",
+    "localFile": "nasdaq-financial-data-analysis.ipynb",
+    "sha256": "83546f8f0e1c42bb8dda148ca88bfed6af18313d253259b8fa51822508360e1a",
+    "sizeBytes": 258270,
+    "cells": 28,
+    "outputMimeTypes": {
+      "text/plain": 12,
+      "text/html": 9,
+      "application/vnd.google.colaboratory.intrinsic+json": 5,
+      "image/png": 2
+    },
+    "renderMode": "Saved notebook source and outputs; no code execution or live API calls.",
+    "runtimeRequirements": [
+      "Python 3",
+      "requests",
+      "pandas",
+      "matplotlib",
+      "Google Colab userdata",
+      "NASDAQ_API_KEY secret"
+    ]
+  }
+}

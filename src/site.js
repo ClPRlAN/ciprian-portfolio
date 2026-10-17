@@ -1,6 +1,7 @@
 (function () {
   const root = document.documentElement;
-  const saved = localStorage.getItem('theme');
+  let saved;
+  try { saved = localStorage.getItem('theme'); } catch (_) {}
   const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initial = saved || (systemDark ? 'dark' : 'light');
   root.dataset.theme = initial;
@@ -8,16 +9,17 @@
   document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
     const update = () => {
       const dark = root.dataset.theme === 'dark';
-      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.setAttribute('aria-label', dark ? btn.dataset.lightLabel : btn.dataset.darkLabel);
       btn.innerHTML = dark ? '☀' : '☾';
     };
     update();
     btn.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', root.dataset.theme);
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (_) {}
       document.querySelectorAll('[data-theme-toggle]').forEach((b) => {
         const dark = root.dataset.theme === 'dark';
         b.innerHTML = dark ? '☀' : '☾';
+        b.setAttribute('aria-label', dark ? b.dataset.lightLabel : b.dataset.darkLabel);
       });
       update();
     });
@@ -31,7 +33,9 @@
       lang.classList.toggle('open');
       langBtn.setAttribute('aria-expanded', String(lang.classList.contains('open')));
     });
-    document.addEventListener('click', () => lang.classList.remove('open'));
+    const closeLanguage = () => { lang.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); };
+    document.addEventListener('click', closeLanguage);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLanguage(); });
   }
 
   const menuBtn = document.querySelector('.menu-btn');
@@ -46,6 +50,8 @@
     mobile.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
       mobile.classList.remove('open');
       document.body.classList.remove('menu-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.innerHTML = '☰';
     }));
   }
 
@@ -94,7 +100,7 @@
           status.textContent = contactForm.dataset.success || 'Thank you. Your message has been sent.';
         }
       } catch (_) {
-        status.textContent = 'Unable to send the message right now. Please use email.';
+        status.textContent = contactForm.dataset.error;
       }
     });
   }

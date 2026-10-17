@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
-<rect width="1200" height="760" fill="#1b1a17"/>
-<g opacity=".18" stroke="#f4f0e5" stroke-width="2"><path d="M0 140h1200M0 280h1200M0 420h1200M0 560h1200"/><path d="M180 0v760M360 0v760M540 0v760M720 0v760M900 0v760M1080 0v760"/></g>
-<path d="M80 565C185 510 245 548 330 430S520 475 620 310 820 345 930 205 1055 188 1130 105" fill="none" stroke="#d3b274" stroke-width="20" stroke-linecap="round"/>
-<g fill="#f4f0e5" font-family="Inter,Arial,sans-serif"><text x="82" y="115" font-size="46" font-weight="600">Financial data analysis</text><text x="82" y="675" font-size="34" opacity=".72">Python · Pandas · Matplotlib</text></g>
-</svg>
