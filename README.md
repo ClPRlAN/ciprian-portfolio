@@ -15,7 +15,7 @@ npm run dev
 
 The build generates `dist/` (ignored by Git). The development server listens on port 4173 and builds once when started. After edits, run `npm run build` and refresh the browser; restart the server if `dev.mjs` changes.
 
-Cloudflare Pages: production branch `main`, build command `npm ci && npm run build` (or `npm run build` when Cloudflare installs dependencies automatically), output directory `dist`. Canonical domain: https://ciprianloghin.com.
+Cloudflare Workers Builds is connected to production branch `main` (confirmed by the public GitHub deployment check). Build with `npm ci && npm run build`, or `npm run build` when Cloudflare installs dependencies automatically; the static output is `dist`. Keep the existing deployment command and asset-directory settings in Cloudflare. The same build/output also works with Cloudflare Pages. Canonical domain: https://ciprianloghin.com.
 
 ## Source structure
 
@@ -35,7 +35,7 @@ Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an 
 
 Notebook content is a static snapshot in its original language. Viewing it requires no API key, account, Python runtime or external notebook request. Re-executing the source notebooks is separate: Cultural Differences requires the unpublished SPSS survey file; Nasdaq requires a Nasdaq API key in Colab Secrets.
 
-To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. The About page uses the supplied laptop photograph. The homepage photograph remains in place until its replacement is supplied.
+To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. The About page uses the supplied laptop photograph; the homepage uses the supplied finance-themed photograph.
 
 ## Contact and documents
 
