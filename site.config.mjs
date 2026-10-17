@@ -9,6 +9,6 @@ export const site = {
   cvPath: "/Ciprian_Loghin_CV.pdf",
   heroImage: "/images/ciprian-loghin-finance-home.webp",
   aboutImage: "/images/ciprian-loghin-zurich-about.webp",
-  logoImage: "/images/ciprian-logo.webp",
+  logoImage: "/images/ciprian-logo-blue.png",
   formspreeId: "mrpbqerd"
 };

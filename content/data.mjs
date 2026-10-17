@@ -30,8 +30,7 @@ export const ui = {
       "bio": "I use financial and business data to structure complex problems, test assumptions and turn analysis into clear, decision-ready recommendations.",
       "cta": "View my work",
       "location": "Zurich, Switzerland",
-      "photoAlt": "Ciprian Loghin working at his desk",
-      "frameTitle": "Business / Finance / Data"
+      "photoAlt": "Ciprian Loghin working at his desk"
     },
     "home": {
       "moreAbout": "More about me",
@@ -142,8 +141,7 @@ export const ui = {
       "bio": "Uso dati finanziari e aziendali per strutturare problemi complessi, mettere alla prova le ipotesi e trasformare l'analisi in raccomandazioni chiare e pronte a supportare le decisioni.",
       "cta": "Scopri il mio lavoro",
       "location": "Zurigo, Svizzera",
-      "photoAlt": "Ciprian Loghin al lavoro alla scrivania",
-      "frameTitle": "Business / Finanza / Dati"
+      "photoAlt": "Ciprian Loghin al lavoro alla scrivania"
     },
     "home": {
       "moreAbout": "Più su di me",
@@ -254,8 +252,7 @@ export const ui = {
       "bio": "Ich nutze Finanz- und Unternehmensdaten, um komplexe Probleme zu strukturieren, Annahmen zu prüfen und Analysen in klare, entscheidungsreife Empfehlungen zu übersetzen.",
       "cta": "Meine Arbeit ansehen",
       "location": "Zürich, Schweiz",
-      "photoAlt": "Ciprian Loghin bei der Arbeit am Schreibtisch",
-      "frameTitle": "Business / Finance / Daten"
+      "photoAlt": "Ciprian Loghin bei der Arbeit am Schreibtisch"
     },
     "home": {
       "moreAbout": "Mehr über mich",
@@ -438,13 +435,14 @@ export const projects = [
 
 export const certifications = [
   {
-    "title": "Laurea in Innovazione Sociale, Comunicazione, Nuove Tecnologie",
-    "issuer": "Università degli Studi di Torino",
+    "title": "Bachelor’s Degree in ICT",
+    "issuer": "University of Turin",
     "year": "2024",
     "category": "education",
     "featured": true,
     "cover": "/images/certifications/bachelor-social-innovation.jpg",
-    "pdf": "/pdfs/certifications/bachelor-social-innovation.pdf"
+    "pdf": "/pdfs/certifications/bachelor-social-innovation.pdf",
+    "subtitle": "Social Innovation, Communication and New Technologies"
   },
   {
     "title": "PRINCE2 Agile Foundation in Project Management",
@@ -497,8 +495,8 @@ export const certifications = [
     "pdf": "/pdfs/certifications/itil4-direct-plan-improve.pdf"
   },
   {
-    "title": "Diploma in Servizi Commerciali",
-    "issuer": "Istituto d’Istruzione Superiore Sella-Aalto-Lagrange",
+    "title": "Vocational Diploma in Business Services",
+    "issuer": "Sella-Aalto-Lagrange School, Turin",
     "year": "2018",
     "category": "education",
     "featured": false,
