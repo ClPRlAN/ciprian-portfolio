@@ -179,7 +179,7 @@ html[data-theme="dark"] .brand img { filter: brightness(.92) contrast(1.04); }
 .contact-row span:first-child { color:var(--muted); }
 .status { min-height:24px; color:var(--muted); font-size:.86rem; }
 .contact-success[hidden] { display: none; }
-.contact-success { min-height: 520px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; outline: none; }
+.contact-success { min-height: 520px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; outline: none; scroll-margin-top:100px; }
 .contact-success.show { opacity: 1; transform: none; }
 .contact-success h2 { font-size: clamp(3.7rem, 6vw, 6.4rem); margin-bottom: 20px; }
 .contact-success p { max-width: 560px; color: var(--muted); font-size: 1.15rem; }

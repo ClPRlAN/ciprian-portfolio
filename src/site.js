@@ -94,7 +94,10 @@
         contactForm.hidden = true;
         if (successPanel) {
           successPanel.hidden = false;
-          requestAnimationFrame(() => successPanel.classList.add('show'));
+          requestAnimationFrame(() => {
+            successPanel.classList.add('show');
+            successPanel.scrollIntoView({ block: 'start' });
+          });
           successPanel.focus({ preventScroll: true });
         } else {
           status.textContent = contactForm.dataset.success || 'Thank you. Your message has been sent.';
