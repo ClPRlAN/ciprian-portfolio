@@ -178,7 +178,7 @@ h2 { font-size: clamp(2.2rem, 4.3vw, 4rem); line-height: 1.12; margin-bottom: 24
 .cv-btn { min-height: 44px; display: inline-flex; align-items: center; padding: 0 15px; border: 1px solid var(--line-strong); border-radius: 11px; background: var(--button-bg); color: var(--button-text); font-size: .77rem; font-weight: 600; white-space: nowrap; }
 .cv-btn:hover { background: var(--button-hover); border-color: var(--accent); transform: translateY(-2px); }
 .lang { position: relative; }
-.lang-menu { position: absolute; right: 0; top: calc(100% + 10px); width: 82px; padding: 6px; border: 1px solid var(--line-strong); border-radius: 13px; background: var(--surface); box-shadow: var(--shadow); opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-6px); transition: opacity .2s ease, transform .2s ease, visibility .2s ease; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 10px); width: 82px; padding: 6px; border: 1px solid var(--line-strong); border-radius: 13px; background: var(--surface); box-shadow: var(--shadow); opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-6px); transition: opacity .2s ease, transform .2s ease; }
 .lang.open .lang-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
 .lang-menu a { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; border-radius: 8px; font-size: .8rem; }
 .lang-menu a:hover, .lang-menu a[aria-current] { background: var(--surface-2); color: var(--accent); }
@@ -381,7 +381,7 @@ h2 { font-size: clamp(2.2rem, 4.3vw, 4rem); line-height: 1.12; margin-bottom: 24
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
 .footer-links a:hover { color: var(--accent); }
-.back-to-top { position: fixed; right: max(24px, calc((100vw - 1420px) / 2)); bottom: 24px; z-index: 40; display: inline-flex; justify-content: center; align-items: center; width: 48px; height: 48px; background: var(--surface-2); color: var(--accent); border: 1px solid var(--line-strong); border-radius: 13px 4px 13px 4px; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .2s ease, transform .2s ease, visibility .2s ease; }
+.back-to-top { position: fixed; right: max(24px, calc((100vw - 1420px) / 2)); bottom: 24px; z-index: 40; display: inline-flex; justify-content: center; align-items: center; width: 48px; height: 48px; background: var(--surface-2); color: var(--accent); border: 1px solid var(--line-strong); border-radius: 13px 4px 13px 4px; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .2s ease, transform .2s ease; }
 .back-to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
 .back-to-top:hover { background: var(--button-bg); border-color: var(--accent); transform: translateY(-3px); }
 .reveal { opacity: 1; transform: none; }
