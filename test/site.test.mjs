@@ -75,3 +75,31 @@ test('certificates, qualifications, CV, contact and favicon destinations are pub
   assert.equal((sitemap.match(/<loc>/g) || []).length, 21);
   assert.doesNotMatch(sitemap, /crunchbase|presentations|research/);
 });
+
+test('published home links, profile photo and search metadata match the public workflow', () => {
+  for (const [language, { prefix }] of Object.entries(languages)) {
+    const home = fs.readFileSync(path.join(dist, prefix, 'index.html'), 'utf8');
+    const hero = home.match(/<section class="hero">([\s\S]*?)<\/section>/)[1];
+    assert.doesNotMatch(home, /<section[^>]+id="about"/);
+    assert.match(hero, /<h1 class="hero-name">Ciprian Loghin<\/h1>/);
+    assert.ok(hero.includes(`href="${prefix}/projects"`));
+    assert.ok(hero.includes(`href="${prefix}/about"`));
+    const about = fs.readFileSync(path.join(dist, prefix, 'about/index.html'), 'utf8');
+    assert.match(about, /src="\/images\/ciprian-loghin-zurich-about\.webp"/);
+    for (const html of [home, about]) {
+      assert.match(html, /<title>Ciprian Loghin \| /);
+      assert.equal((html.match(/<link rel="alternate" hreflang=/g) || []).length, 7);
+      assert.ok(html.includes(`hreflang="${language}-CH"`));
+      const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+      const person = graph.find(entity => entity['@type'] === 'Person');
+      assert.equal(person.name, 'Ciprian Loghin');
+      assert.equal(person.homeLocation.address.addressCountry, 'CH');
+      assert.match(graph.find(entity => entity['@id'] === person.image['@id']).url, /ciprian-loghin-zurich-about\.webp$/);
+    }
+  }
+  const css = fs.readFileSync(path.join(dist, 'styles.css'), 'utf8');
+  assert.doesNotMatch(css, /fonts\.googleapis\.com|@import/);
+  const fontUrls = [...css.matchAll(/url\((\/fonts\/[^)]+)\)/g)].map(match => match[1]);
+  assert.equal(fontUrls.length, 4);
+  for (const fontUrl of fontUrls) assert.ok(fs.statSync(path.join(dist, fontUrl)).size > 0);
+});

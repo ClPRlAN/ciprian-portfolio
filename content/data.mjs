@@ -28,11 +28,11 @@ export const ui = {
       "role": "Business & Financial Analyst",
       "slogan": "Analytics for Real Business Problems",
       "bio": "I use financial and business data to structure complex problems, test assumptions and turn analysis into clear, decision-ready recommendations.",
-      "cta": "View my work"
+      "cta": "View my work",
+      "location": "Zurich, Switzerland",
+      "photoAlt": "Ciprian Loghin working at his desk"
     },
     "home": {
-      "aboutTitle": "Business thinking, financial perspective, data discipline.",
-      "aboutText": "I combine a technical foundation in ICT and Data Science with business analysis, finance and stakeholder-facing experience. My work focuses on turning complex information into decisions that are clear, useful and actionable.",
       "moreAbout": "More about me",
       "selectedProjects": "Selected projects",
       "certifications": "Certifications",
@@ -49,7 +49,8 @@ export const ui = {
       "skills": "Skills",
       "businessFinance": "Business & Finance",
       "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration"
+      "toolsCollaboration": "Tools & Collaboration",
+      "photoAlt": "Ciprian Loghin working on a laptop"
     },
     "common": {
       "featured": "Featured",
@@ -134,12 +135,12 @@ export const ui = {
       "role": "Business & Financial Analyst",
       "slogan": "Analisi per problemi aziendali reali",
       "bio": "Uso dati finanziari e aziendali per strutturare problemi complessi, mettere alla prova le ipotesi e trasformare l'analisi in raccomandazioni chiare e pronte a supportare le decisioni.",
-      "cta": "Scopri il mio lavoro"
+      "cta": "Scopri il mio lavoro",
+      "location": "Zurigo, Svizzera",
+      "photoAlt": "Ciprian Loghin al lavoro alla scrivania"
     },
     "home": {
-      "aboutTitle": "Pensiero business, prospettiva finanziaria, disciplina dei dati.",
-      "aboutText": "Unisco una base tecnica in ICT e Data Science con business analysis, finanza ed esperienza a contatto con stakeholder. Il mio lavoro mira a trasformare informazioni complesse in decisioni chiare, utili e attuabili.",
-      "moreAbout": "Scopri di più",
+      "moreAbout": "Più su di me",
       "selectedProjects": "Progetti selezionati",
       "certifications": "Certificazioni",
       "viewAll": "Vedi tutto",
@@ -155,7 +156,8 @@ export const ui = {
       "skills": "Competenze",
       "businessFinance": "Business & Finance",
       "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration"
+      "toolsCollaboration": "Tools & Collaboration",
+      "photoAlt": "Ciprian Loghin al lavoro al computer portatile"
     },
     "common": {
       "featured": "In evidenza",
@@ -240,11 +242,11 @@ export const ui = {
       "role": "Business & Financial Analyst",
       "slogan": "Analytics für reale Geschäftsprobleme",
       "bio": "Ich nutze Finanz- und Unternehmensdaten, um komplexe Probleme zu strukturieren, Annahmen zu prüfen und Analysen in klare, entscheidungsreife Empfehlungen zu übersetzen.",
-      "cta": "Meine Arbeit ansehen"
+      "cta": "Meine Arbeit ansehen",
+      "location": "Zürich, Schweiz",
+      "photoAlt": "Ciprian Loghin bei der Arbeit am Schreibtisch"
     },
     "home": {
-      "aboutTitle": "Business-Denken, Finanzperspektive, Datendisziplin.",
-      "aboutText": "Ich verbinde einen technischen Hintergrund in ICT und Data Science mit Business Analysis, Finance und Erfahrung in der Zusammenarbeit mit Stakeholdern. Mein Fokus liegt darauf, komplexe Informationen in klare und umsetzbare Entscheidungen zu übersetzen.",
       "moreAbout": "Mehr über mich",
       "selectedProjects": "Ausgewählte Projekte",
       "certifications": "Zertifikate",
@@ -261,7 +263,8 @@ export const ui = {
       "skills": "Kompetenzen",
       "businessFinance": "Business & Finance",
       "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration"
+      "toolsCollaboration": "Tools & Collaboration",
+      "photoAlt": "Ciprian Loghin bei der Arbeit am Laptop"
     },
     "common": {
       "featured": "Ausgewählt",

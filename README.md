@@ -35,7 +35,7 @@ Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an 
 
 Notebook content is a static snapshot in its original language. Viewing it requires no API key, account, Python runtime or external notebook request. Re-executing the source notebooks is separate: Cultural Differences requires the unpublished SPSS survey file; Nasdaq requires a Nasdaq API key in Colab Secrets.
 
-To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. Homepage/About photographs remain the existing files until replacements are supplied.
+To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. The About page uses the supplied laptop photograph. The homepage photograph remains in place until its replacement is supplied.
 
 ## Contact and documents
 
@@ -46,3 +46,7 @@ Certificates and academic qualifications link to original PDFs. Years on the dip
 ## Validation
 
 `npm test` checks notebook rendering/sanitization and generated pages/assets. Run `npm run build` first for generated-page checks. The mobile menu, theme, local notebook scrolling, PDF responses, translated navigation and mocked Formspree success/error states are also checked during browser validation. A real Formspree submission is not part of automated tests.
+
+## Search visibility
+
+`lib/seo.mjs` generates localized titles, canonical URLs, global and Swiss hreflang links, social metadata and connected structured data. `docs/SEO.md` records deployment/Search Console checks and the limits of local validation. Fonts are served locally from pinned Fontsource packages with their licenses.

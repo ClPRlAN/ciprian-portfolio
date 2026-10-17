@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { renderNotebook } from './lib/notebook.mjs';
+import { pageSeo, sitemapXml } from './lib/seo.mjs';
 import { site } from './site.config.mjs';
 import { languages, ui, skills, projects, certifications } from './content/data.mjs';
 
@@ -13,6 +14,16 @@ fs.mkdirSync(out, { recursive: true });
 copyDir(path.join(__dirname, 'public'), out);
 fs.copyFileSync(path.join(__dirname, 'src/styles.css'), path.join(out, 'styles.css'));
 fs.copyFileSync(path.join(__dirname, 'src/site.js'), path.join(out, 'site.js'));
+const fontsOut = path.join(out, 'fonts');
+fs.mkdirSync(fontsOut, { recursive: true });
+for (const [packageName, filenames] of [
+  ['@fontsource-variable/inter', ['inter-latin-wght-normal.woff2', 'inter-latin-ext-wght-normal.woff2']],
+  ['@fontsource/instrument-serif', ['instrument-serif-latin-400-normal.woff2', 'instrument-serif-latin-ext-400-normal.woff2']]
+]) {
+  const packageRoot = path.join(__dirname, 'node_modules', packageName);
+  for (const filename of filenames) fs.copyFileSync(path.join(packageRoot, 'files', filename), path.join(fontsOut, filename));
+  fs.copyFileSync(path.join(packageRoot, 'LICENSE'), path.join(fontsOut, `${packageName.split('/').pop()}-LICENSE.txt`));
+}
 const notebookSources = JSON.parse(fs.readFileSync(path.join(__dirname, 'content/notebooks/sources.json'), 'utf8'));
 const notebookViews = new Map();
 for (const project of projects) {
@@ -47,6 +58,7 @@ const routeFor = (lang, route='') => {
   return `${p}${route}`;
 };
 const currentForLanguage = (targetLang, route) => routeFor(targetLang, route);
+const linkArrow = '<svg class="link-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3 13 13 3M3 3h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 function writePage(lang, route, html) {
   const rel = routeFor(lang, route).replace(/^\//,'');
@@ -57,12 +69,14 @@ function writePage(lang, route, html) {
 
 function layout({ lang, route, title, description, content, pageType='website' }) {
   const t = ui[lang];
-  const canonical = site.domain + routeFor(lang, route);
+  const seo = pageSeo({ lang, route, title, description });
+  const canonical = seo.canonical;
+  description = seo.description;
   const navRoute = (_key, routePath) => routeFor(lang, routePath);
   const languageLinks = Object.keys(languages).map(l => `<a href="${currentForLanguage(l, route)}" hreflang="${l}">${languages[l].label}</a>`).join('');
   const mobileLanguageLinks = Object.keys(languages).map(l => `<a href="${currentForLanguage(l, route)}">${languages[l].label}</a>`).join('');
-  const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — Business & Financial Analyst`;
-  const ogImage = `${site.domain}/assets/og-card.svg`;
+  const fullTitle = seo.title;
+  const ogImage = seo.image.url;
   const nav = [
     ['home','/',t.nav.home], ['about','/about',t.nav.about], ['projects','/projects',t.nav.projects], ['certifications','/certifications',t.nav.certifications], ['contact','/contact',t.nav.contact]
   ];
@@ -79,25 +93,36 @@ function layout({ lang, route, title, description, content, pageType='website' }
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(description)}">
+<meta name="author" content="${esc(site.name)}">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="${canonical}">
 <meta property="og:type" content="${pageType}">
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${ogImage}">
+<meta property="og:image:type" content="${seo.image.type}">
+<meta property="og:image:width" content="${seo.image.width}">
+<meta property="og:image:height" content="${seo.image.height}">
+<meta property="og:image:alt" content="${esc(seo.image.alt)}">
+<meta property="og:site_name" content="${esc(site.name)}">
+<meta property="og:locale" content="${seo.ogLocale}">
+${seo.alternateOgLocales.map(locale=>`<meta property="og:locale:alternate" content="${locale}">`).join('\n')}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(fullTitle)}">
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${ogImage}">
-${Object.keys(languages).map(l=>`<link rel="alternate" hreflang="${l}" href="${site.domain}${currentForLanguage(l,route)}">`).join('\n')}
-<link rel="alternate" hreflang="x-default" href="${site.domain}${currentForLanguage('en',route)}">
+<meta name="twitter:image:alt" content="${esc(seo.image.alt)}">
+${seo.alternates.map(({hreflang,href})=>`<link rel="alternate" hreflang="${hreflang}" href="${href}">`).join('\n')}
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="icon" media="(prefers-color-scheme: light)" href="/favicon-light.png" type="image/png">
 <link rel="icon" media="(prefers-color-scheme: dark)" href="/favicon-dark.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person","name":site.name,"url":site.domain,"jobTitle":"Business & Financial Analyst","sameAs":[site.linkedin,site.github],"image":site.domain + site.logoImage})}</script>
+<script type="application/ld+json">${JSON.stringify(seo.structuredData).replace(/</g,'\\u003c')}</script>
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script>try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
 </head>
@@ -105,7 +130,7 @@ ${Object.keys(languages).map(l=>`<link rel="alternate" hreflang="${l}" href="${s
 <a class="skip-link" href="#main">${esc(t.common.skip)}</a>
 <header class="nav-wrap">
   <nav class="nav" aria-label="${esc(t.common.primaryNav)}">
-    <a class="brand" href="${routeFor(lang,'/')}" aria-label="${site.name} Home"><img src="${site.logoImage}" alt=""><span>${site.name}</span></a>
+    <a class="brand" href="${routeFor(lang,'/')}" aria-label="${site.name} Home"><img src="${site.logoImage}" alt="" width="34" height="34"><span>${site.name}</span></a>
     <div class="nav-links">${navHtml}</div>
     <div class="nav-actions">
       <a class="cv-btn" href="${site.cvPath}" target="_blank" rel="noopener">${esc(t.nav.cv)}</a>
@@ -144,8 +169,7 @@ function sectionCards(lang, id, title, items, hrefAll, kind) {
 function home(lang) {
   const t=ui[lang];
   return layout({lang,route:'/',description:'Business & Financial Analyst portfolio of Ciprian Loghin, MSc Data Science & Finance at the University of Zurich.',content:`
-<section class="hero"><div class="hero-grid"><div class="reveal"><div class="hero-name">Ciprian Loghin</div><div class="hero-meta"><span>${esc(t.hero.degree)}</span><span>${esc(t.hero.role)}</span></div><h1 class="hero-title">${esc(t.hero.slogan)}</h1><p class="hero-bio">${esc(t.hero.bio)}</p><a class="text-link" href="${routeFor(lang,'/projects')}">${esc(t.hero.cta)} ↗</a></div><div class="hero-photo-shell reveal"><img class="hero-photo" src="${site.heroImage}" alt="Ciprian Loghin working at a desk"></div></div></section>
-<section class="section" id="about"><div class="container home-about-clean reveal"><h2>${esc(t.home.aboutTitle)}</h2><p>${esc(t.home.aboutText)}</p><a class="text-link" href="${routeFor(lang,'/about')}">${esc(t.home.moreAbout)} ↗</a></div></section>
+<section class="hero"><div class="hero-grid"><div class="reveal"><h1 class="hero-name">Ciprian Loghin</h1><div class="hero-meta"><span>${esc(t.hero.degree)}</span><span>${esc(t.hero.role)}</span><span>${esc(t.hero.location)}</span></div><h2 class="hero-title">${esc(t.hero.slogan)}</h2><p class="hero-bio">${esc(t.hero.bio)}</p><div class="hero-links"><a class="text-link" href="${routeFor(lang,'/projects')}">${esc(t.hero.cta)} ${linkArrow}</a><a class="text-link" href="${routeFor(lang,'/about')}">${esc(t.home.moreAbout)} ${linkArrow}</a></div></div><div class="hero-photo-shell reveal"><img class="hero-photo" src="${site.heroImage}" alt="${esc(t.hero.photoAlt)}" width="1448" height="1086" fetchpriority="high" decoding="async"></div></div></section>
 ${sectionCards(lang,'projects',t.home.selectedProjects,projects, '/projects','project')}
 ${sectionCards(lang,'certifications',t.home.certifications,certifications.filter(c=>c.featured), '/certifications','cert')}
 <section class="contact-cta" id="contact"><div class="container contact-cta-inner reveal"><div><h2>${esc(t.home.contactTitle)}</h2><p class="lede">${esc(t.home.contactText)}</p></div><a class="button primary" href="${routeFor(lang,'/contact')}">${esc(t.home.contactCta)} ↗</a></div></section>`});
@@ -156,7 +180,7 @@ function pageHero(title, intro) { return `<section class="page-hero"><div class=
 function aboutPage(lang) {
   const t=ui[lang];
   const skillGroup=(title,items)=>`<div class="skill-group reveal"><h3>${esc(title)}</h3><div class="skill-list">${items.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</div></div>`;
-  const content=`${pageHero(t.about.title,'')}<section class="section-sm"><div class="container about-layout"><figure class="about-portrait reveal"><img src="${site.aboutImage}" alt="Ciprian Loghin" loading="eager"></figure><div class="about-copy reveal"><p>${esc(t.about.p1)}</p><p>${esc(t.about.p2)}</p><p>${esc(t.about.p3)}</p></div></div><div class="container"><div class="skills">${skillGroup(t.about.businessFinance,skills.business)}${skillGroup(t.about.dataAnalytics,skills.data)}${skillGroup(t.about.toolsCollaboration,skills.tools)}</div></div></section>`;
+  const content=`${pageHero(t.about.title,t.hero.location)}<section class="section-sm"><div class="container about-layout"><figure class="about-portrait reveal"><img src="${site.aboutImage}" alt="${esc(t.about.photoAlt)}" width="1448" height="1086" loading="eager" fetchpriority="high" decoding="async"></figure><div class="about-copy reveal"><p>${esc(t.about.p1)}</p><p>${esc(t.about.p2)}</p><p>${esc(t.about.p3)}</p></div></div><div class="container"><div class="skills">${skillGroup(t.about.businessFinance,skills.business)}${skillGroup(t.about.dataAnalytics,skills.data)}${skillGroup(t.about.toolsCollaboration,skills.tools)}</div></div></section>`;
   return layout({lang,route:'/about',title:t.nav.about,description:t.about.p1,content});
 }
 
@@ -201,14 +225,9 @@ for (const lang of Object.keys(languages)) {
   writePage(lang,'/contact',contactPage(lang));
 }
 
-const locs=[];
-for (const lang of Object.keys(languages)) {
-  const base=languages[lang].prefix;
-  const local=['/', '/about','/projects',...projects.map(p=>`/projects/${p.slug}`),'/certifications','/contact'];
-  for (const r of local) locs.push(`${site.domain}${routeFor(lang,r)}`);
-}
-fs.writeFileSync(path.join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${locs.map(l=>`<url><loc>${l}</loc></url>`).join('')}</urlset>`);
+const sitemapRoutes=['/', '/about', '/projects', ...projects.map(p=>`/projects/${p.slug}`), '/certifications', '/contact'];
+fs.writeFileSync(path.join(out,'sitemap.xml'), sitemapXml(sitemapRoutes));
 fs.writeFileSync(path.join(out,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${site.domain}/sitemap.xml\n`);
 fs.writeFileSync(path.join(out,'_headers'),`/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n`);
 
-console.log(`Built ${locs.length} localized pages into dist/`);
+console.log(`Built ${sitemapRoutes.length * Object.keys(languages).length} localized pages into dist/`);

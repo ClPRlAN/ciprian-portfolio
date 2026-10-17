@@ -63,7 +63,11 @@
       }
     });
   }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => {
+    // Keep content visible without JavaScript and above-the-fold content visible immediately.
+    if (el.getBoundingClientRect().top >= window.innerHeight) el.classList.add('reveal-pending');
+    io.observe(el);
+  });
 
   const revealPhone = document.querySelector('[data-reveal-phone]');
   if (revealPhone) {
