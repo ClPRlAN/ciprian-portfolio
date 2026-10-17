@@ -59,3 +59,8 @@ The contact form is already configured with the current Formspree form ID in `si
 - Home About preview image
 - Contact-form success state that replaces the form after submission
 - Two real projects only; no placeholder project
+
+
+## Portfolio structure update
+
+The public navigation is intentionally focused on Home, About, Projects, Certifications and Contact. Project pages include an embedded PDF report derived from the repository README and an in-page notebook preview loaded from the public GitHub notebook.

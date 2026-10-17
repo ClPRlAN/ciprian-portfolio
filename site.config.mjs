@@ -12,6 +12,5 @@ export const site = {
   heroImage: "/images/ciprian-hero.webp",
   aboutImage: "/images/ciprian-about.webp",
   logoImage: "/images/ciprian-logo.webp",
-  homeAboutImage: "/images/ciprian-home-about.webp",
   formspreeId: "mrpbqerd"
 };
