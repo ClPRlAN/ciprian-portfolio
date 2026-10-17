@@ -1,6 +1,6 @@
 # Ciprian Loghin — Portfolio
 
-Professional portfolio in English, Italian and German, with a warm light/dark theme and responsive navigation.
+Professional portfolio in English, Italian and German, with a futuristic blue interface, responsive navigation and locally served Space Grotesk/Inter fonts. Dark mode uses light blue text on navy; light mode uses deep blue text on pale blue surfaces.
 
 ## Development
 
@@ -31,7 +31,7 @@ Only these source locations are authoritative. There is no nested duplicate appl
 
 ## Projects
 
-Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an internal page with a local notebook library, code, tables, saved charts and an embedded PDF report. GitHub and Colab remain optional external destinations. The Cultural Differences report is the supplied original PDF; the Nasdaq report is the existing project PDF.
+Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an internal page with keyboard-accessible Library/Report tabs, a local notebook library, code, tables, saved charts and an embedded PDF report. Without JavaScript, both document sections remain visible. GitHub and Colab remain optional external destinations. The Cultural Differences report is the supplied original PDF; the Nasdaq report is the existing project PDF.
 
 Notebook content is a static snapshot in its original language. Viewing it requires no API key, account, Python runtime or external notebook request. Re-executing the source notebooks is separate: Cultural Differences requires the unpublished SPSS survey file; Nasdaq requires a Nasdaq API key in Colab Secrets.
 
@@ -50,3 +50,7 @@ Certificates and academic qualifications link to original PDFs. Years on the dip
 ## Search visibility
 
 `lib/seo.mjs` generates localized titles, canonical URLs, global and Swiss hreflang links, social metadata and connected structured data. `docs/SEO.md` records deployment/Search Console checks and the limits of local validation. Fonts are served locally from pinned Fontsource packages with their licenses.
+
+## Interface interactions
+
+Menus support keyboard focus and Escape. Theme preference persists locally, following the system until a preference is chosen. Reading progress, back-to-top navigation and subtle pointer lighting enhance longer pages. Motion effects respect reduced-motion preferences and content remains visible without JavaScript; a fallback navigation is also available.

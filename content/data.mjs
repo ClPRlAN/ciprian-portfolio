@@ -30,7 +30,8 @@ export const ui = {
       "bio": "I use financial and business data to structure complex problems, test assumptions and turn analysis into clear, decision-ready recommendations.",
       "cta": "View my work",
       "location": "Zurich, Switzerland",
-      "photoAlt": "Ciprian Loghin working at his desk"
+      "photoAlt": "Ciprian Loghin working at his desk",
+      "frameTitle": "Business / Finance / Data"
     },
     "home": {
       "moreAbout": "More about me",
@@ -85,7 +86,10 @@ export const ui = {
       "education": "Academic qualifications",
       "educationIntro": "University and vocational qualifications, with the original diplomas.",
       "certificationIntro": "Professional and technical certifications.",
-      "contactError": "Unable to send the message right now. Please use email."
+      "contactError": "Unable to send the message right now. Please use email.",
+      "closeMenu": "Close menu",
+      "backToTop": "Back to top",
+      "projectContents": "Project contents"
     },
     "project": {
       "overview": "Executive overview",
@@ -118,7 +122,8 @@ export const ui = {
       "success": "Thank you. Your message has been sent.",
       "successTitle": "Message sent.",
       "successBody": "Thank you for getting in touch. I’ll get back to you as soon as possible.",
-      "error": "Unable to send the message right now. Please use email."
+      "error": "Unable to send the message right now. Please use email.",
+      "sending": "Sending…"
     }
   },
   "it": {
@@ -137,7 +142,8 @@ export const ui = {
       "bio": "Uso dati finanziari e aziendali per strutturare problemi complessi, mettere alla prova le ipotesi e trasformare l'analisi in raccomandazioni chiare e pronte a supportare le decisioni.",
       "cta": "Scopri il mio lavoro",
       "location": "Zurigo, Svizzera",
-      "photoAlt": "Ciprian Loghin al lavoro alla scrivania"
+      "photoAlt": "Ciprian Loghin al lavoro alla scrivania",
+      "frameTitle": "Business / Finanza / Dati"
     },
     "home": {
       "moreAbout": "Più su di me",
@@ -192,7 +198,10 @@ export const ui = {
       "education": "Titoli di studio",
       "educationIntro": "Formazione universitaria e professionale, con i diplomi originali.",
       "certificationIntro": "Certificazioni professionali e tecniche.",
-      "contactError": "Impossibile inviare il messaggio in questo momento. Contattami via email."
+      "contactError": "Impossibile inviare il messaggio in questo momento. Contattami via email.",
+      "closeMenu": "Chiudi menu",
+      "backToTop": "Torna in alto",
+      "projectContents": "Contenuti del progetto"
     },
     "project": {
       "overview": "Executive overview",
@@ -225,7 +234,8 @@ export const ui = {
       "success": "Grazie. Il messaggio è stato inviato.",
       "successTitle": "Messaggio inviato.",
       "successBody": "Grazie per avermi contattato. Risponderò al messaggio il prima possibile.",
-      "error": "Impossibile inviare il messaggio in questo momento. Contattami via email."
+      "error": "Impossibile inviare il messaggio in questo momento. Contattami via email.",
+      "sending": "Invio in corso…"
     }
   },
   "de": {
@@ -244,7 +254,8 @@ export const ui = {
       "bio": "Ich nutze Finanz- und Unternehmensdaten, um komplexe Probleme zu strukturieren, Annahmen zu prüfen und Analysen in klare, entscheidungsreife Empfehlungen zu übersetzen.",
       "cta": "Meine Arbeit ansehen",
       "location": "Zürich, Schweiz",
-      "photoAlt": "Ciprian Loghin bei der Arbeit am Schreibtisch"
+      "photoAlt": "Ciprian Loghin bei der Arbeit am Schreibtisch",
+      "frameTitle": "Business / Finance / Daten"
     },
     "home": {
       "moreAbout": "Mehr über mich",
@@ -299,7 +310,10 @@ export const ui = {
       "education": "Bildungsabschlüsse",
       "educationIntro": "Hochschul- und Berufsabschlüsse mit den Originaldiplomen.",
       "certificationIntro": "Berufliche und technische Zertifikate.",
-      "contactError": "Die Nachricht konnte derzeit nicht gesendet werden. Bitte kontaktieren Sie mich per E-Mail."
+      "contactError": "Die Nachricht konnte derzeit nicht gesendet werden. Bitte kontaktieren Sie mich per E-Mail.",
+      "closeMenu": "Menü schließen",
+      "backToTop": "Nach oben",
+      "projectContents": "Projektinhalte"
     },
     "project": {
       "overview": "Executive Overview",
@@ -332,7 +346,8 @@ export const ui = {
       "success": "Danke. Deine Nachricht wurde gesendet.",
       "successTitle": "Nachricht gesendet.",
       "successBody": "Vielen Dank für Ihre Nachricht. Ich melde mich so bald wie möglich bei Ihnen.",
-      "error": "Die Nachricht konnte derzeit nicht gesendet werden. Bitte kontaktieren Sie mich per E-Mail."
+      "error": "Die Nachricht konnte derzeit nicht gesendet werden. Bitte kontaktieren Sie mich per E-Mail.",
+      "sending": "Wird gesendet…"
     }
   }
 };
