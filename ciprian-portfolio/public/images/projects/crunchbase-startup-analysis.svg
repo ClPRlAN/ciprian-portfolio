@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#efe7d8"/><stop offset="1" stop-color="#d4bb88"/></linearGradient></defs>
+<rect width="1200" height="760" fill="url(#g)"/>
+<g fill="none" stroke="#1b1a17" stroke-width="11" opacity=".9">
+<rect x="115" y="142" width="360" height="430" rx="28"/>
+<path d="M170 215h250M170 290h250M170 365h165M170 440h215" opacity=".55"/>
+<path d="M640 560V345M760 560V260M880 560V180M1000 560V110"/>
+<path d="M610 560h440"/>
+<path d="M640 350l120-92 120-77 120-72" stroke="#9b793f" stroke-width="18"/>
+<circle cx="640" cy="350" r="16" fill="#9b793f" stroke="none"/><circle cx="760" cy="258" r="16" fill="#9b793f" stroke="none"/><circle cx="880" cy="181" r="16" fill="#9b793f" stroke="none"/><circle cx="1000" cy="109" r="16" fill="#9b793f" stroke="none"/>
+</g>
+<text x="115" y="675" fill="#1b1a17" font-family="Inter,Arial,sans-serif" font-size="46" font-weight="600">Startup funding · data engineering</text>
+</svg>
