@@ -37,7 +37,7 @@ test('every language and route has a distinct name-first title and reciprocal gl
   assert.equal(pageSeo({ lang: 'de', route: '/about/' }).canonical, `${site.domain}/de/about`);
 });
 
-test('personal identity, portrait, Swiss location and current study are accurate across localized pages', () => {
+test('personal identity, blue branding, Swiss location and current study are accurate across localized pages', () => {
   for (const lang of langs) {
     const seo = pageSeo({ lang, route: '/about' });
     const person = graphType(seo, 'Person');
@@ -56,12 +56,14 @@ test('personal identity, portrait, Swiss location and current study are accurate
     assert.equal(profile.inLanguage, lang);
     assert.deepEqual(profile.mainEntity, { '@id': person['@id'] });
     assert.deepEqual(graphType(seo, 'WebSite').inLanguage, langs);
-    const portrait = seo.structuredData['@graph'].find(item => item['@id'] === person.image['@id']);
-    assert.match(portrait.contentUrl, /\/images\/ciprian-loghin-zurich-about\.webp$/);
-    assert.doesNotMatch(portrait.contentUrl, /logo/);
-    assert.equal(portrait.width, 1448);
-    assert.equal(seo.image.url, portrait.contentUrl);
-    assert.match(seo.image.type, /^image\//);
+    assert.equal(person.image, undefined, 'the logo must not be presented as a personal portrait');
+    const logo = seo.structuredData['@graph'].find(item => item['@id'] === `${site.domain}/#logo`);
+    assert.equal(logo.contentUrl, `${site.domain}${site.logoImage}`);
+    assert.equal(logo.width, 256);
+    assert.equal(logo.height, 222);
+    assert.equal(seo.image.url, logo.contentUrl);
+    assert.equal(seo.image.type, 'image/png');
+    assert.doesNotMatch(JSON.stringify(seo), /ciprian-loghin-(?:zurich-about|finance-home)\.webp|#portrait/);
   }
   assert.match(pageSeo({ lang: 'it' }).title, /Zurigo/);
   assert.match(pageSeo({ lang: 'de' }).description, /Zürich, Schweiz/);

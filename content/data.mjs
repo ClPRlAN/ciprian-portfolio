@@ -29,8 +29,7 @@ export const ui = {
       "slogan": "Analytics for Real Business Problems",
       "bio": "I use financial and business data to structure complex problems, test assumptions and turn analysis into clear, decision-ready recommendations.",
       "cta": "View my work",
-      "location": "Zurich, Switzerland",
-      "photoAlt": "Ciprian Loghin working at his desk"
+      "location": "Zurich, Switzerland"
     },
     "home": {
       "moreAbout": "More about me",
@@ -49,8 +48,7 @@ export const ui = {
       "skills": "Skills",
       "businessFinance": "Business & Finance",
       "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration",
-      "photoAlt": "Ciprian Loghin working on a laptop"
+      "toolsCollaboration": "Tools & Collaboration"
     },
     "common": {
       "featured": "Featured",
@@ -140,8 +138,7 @@ export const ui = {
       "slogan": "Analisi per problemi aziendali reali",
       "bio": "Uso dati finanziari e aziendali per strutturare problemi complessi, mettere alla prova le ipotesi e trasformare l'analisi in raccomandazioni chiare e pronte a supportare le decisioni.",
       "cta": "Scopri il mio lavoro",
-      "location": "Zurigo, Svizzera",
-      "photoAlt": "Ciprian Loghin al lavoro alla scrivania"
+      "location": "Zurigo, Svizzera"
     },
     "home": {
       "moreAbout": "Più su di me",
@@ -160,8 +157,7 @@ export const ui = {
       "skills": "Competenze",
       "businessFinance": "Business & Finance",
       "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration",
-      "photoAlt": "Ciprian Loghin al lavoro al computer portatile"
+      "toolsCollaboration": "Tools & Collaboration"
     },
     "common": {
       "featured": "In evidenza",
@@ -251,8 +247,7 @@ export const ui = {
       "slogan": "Analytics für reale Geschäftsprobleme",
       "bio": "Ich nutze Finanz- und Unternehmensdaten, um komplexe Probleme zu strukturieren, Annahmen zu prüfen und Analysen in klare, entscheidungsreife Empfehlungen zu übersetzen.",
       "cta": "Meine Arbeit ansehen",
-      "location": "Zürich, Schweiz",
-      "photoAlt": "Ciprian Loghin bei der Arbeit am Schreibtisch"
+      "location": "Zürich, Schweiz"
     },
     "home": {
       "moreAbout": "Mehr über mich",
@@ -271,8 +266,7 @@ export const ui = {
       "skills": "Kompetenzen",
       "businessFinance": "Business & Finance",
       "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration",
-      "photoAlt": "Ciprian Loghin bei der Arbeit am Laptop"
+      "toolsCollaboration": "Tools & Collaboration"
     },
     "common": {
       "featured": "Ausgewählt",

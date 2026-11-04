@@ -76,7 +76,7 @@ test('certificates, qualifications, CV, contact and favicon destinations are pub
   assert.doesNotMatch(sitemap, /crunchbase|presentations|research/);
 });
 
-test('published home links, profile photo and search metadata match the public workflow', () => {
+test('published home links, photo-free pages and search metadata match the public workflow', () => {
   for (const [language, { prefix }] of Object.entries(languages)) {
     const home = fs.readFileSync(path.join(dist, prefix, 'index.html'), 'utf8');
     const hero = home.match(/<section class="hero">([\s\S]*?)<\/section>/)[1];
@@ -85,8 +85,9 @@ test('published home links, profile photo and search metadata match the public w
     assert.ok(hero.includes(`href="${prefix}/projects"`));
     assert.ok(hero.includes(`href="${prefix}/about"`));
     const about = fs.readFileSync(path.join(dist, prefix, 'about/index.html'), 'utf8');
-    assert.match(about, /src="\/images\/ciprian-loghin-zurich-about\.webp"/);
+    assert.doesNotMatch(hero, /<img\b/);
     for (const html of [home, about]) {
+      assert.doesNotMatch(html, /ciprian-loghin-(?:zurich-about|finance-home)\.webp|hero-photo|about-portrait/);
       assert.match(html, /<title>Ciprian Loghin \| /);
       assert.equal((html.match(/<link rel="alternate" hreflang=/g) || []).length, 7);
       assert.ok(html.includes(`hreflang="${language}-CH"`));
@@ -94,7 +95,8 @@ test('published home links, profile photo and search metadata match the public w
       const person = graph.find(entity => entity['@type'] === 'Person');
       assert.equal(person.name, 'Ciprian Loghin');
       assert.equal(person.homeLocation.address.addressCountry, 'CH');
-      assert.match(graph.find(entity => entity['@id'] === person.image['@id']).url, /ciprian-loghin-zurich-about\.webp$/);
+      assert.equal(person.image, undefined);
+      assert.equal(graph.find(entity => entity['@id'] === 'https://ciprianloghin.com/#logo').url, 'https://ciprianloghin.com/images/ciprian-logo-blue.png');
     }
   }
   const css = fs.readFileSync(path.join(dist, 'styles.css'), 'utf8');

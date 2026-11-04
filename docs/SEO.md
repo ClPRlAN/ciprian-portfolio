@@ -7,10 +7,10 @@ The site is a personal portfolio for a Business & Financial Analyst based in Zur
 - A visible personal-name H1 on the homepage, with the professional slogan retained and a visible localized Zurich/Switzerland location.
 - Name-first page titles and unique translated metadata for English, Italian and German pages.
 - Self-referencing canonical URLs and reciprocal `en`, `it`, `de`, `en-CH`, `it-CH`, `de-CH` and `x-default` links in both page heads and the sitemap. The Swiss aliases point to the existing translated pages; there are no artificial duplicate country pages.
-- Connected `Person`, `WebSite`, `ProfilePage`, page, breadcrumb and project structured data. The identity uses a real portrait, Zurich as the home city, the existing LinkedIn/GitHub profiles and the current university affiliation. It does not claim an awarded MSc, a bank employer, a street address, reviews or a LocalBusiness.
+- Connected `Person`, `WebSite`, `ProfilePage`, page, breadcrumb and project structured data. The identity uses Zurich as the home city, the existing LinkedIn/GitHub profiles and the current university affiliation. Personal photographs are omitted, and the existing blue logo is used for general social previews without presenting it as a person's portrait. The identity does not claim an awarded MSc, a bank employer, a street address, reviews or a LocalBusiness.
 - A crawlable favicon set, raster social images, localized Open Graph text and large-image preview permission.
 - Static HTML content visible without JavaScript; readable local project notebooks and genuine reports.
-- Locally served WOFF2 fonts, font preloads, image dimensions and priority loading for the initial photograph. Font licenses ship with the generated assets.
+- Locally served WOFF2 fonts, font preloads and image dimensions for the logo and project covers. Font licenses ship with the generated assets.
 
 ## After deployment
 

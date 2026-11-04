@@ -22,9 +22,9 @@ Cloudflare Workers Builds is connected to production branch `main` (confirmed by
 - `content/data.mjs`: translated interface text, projects, certifications and academic qualifications.
 - `content/notebooks/`: original notebook snapshots and `sources.json` with exact Git commits and SHA-256 hashes.
 - `lib/notebook.mjs`: build-time Markdown/notebook rendering; code is displayed, never executed. HTML outputs are sanitized and embedded charts retained.
-- `public/`: the CV, photos, logo, favicons, report PDFs and certificate/diploma PDFs.
+- `public/`: the CV, logo, favicons, project/certificate covers, report PDFs and certificate/diploma PDFs.
 - `src/styles.css`, `src/site.js`: design and browser interactions.
-- `site.config.mjs`: personal links, current photos and Formspree configuration.
+- `site.config.mjs`: personal links, logo and Formspree configuration.
 - `build.mjs`, `dev.mjs`: static build and local development server.
 
 Only these source locations are authoritative. There is no nested duplicate application or tracked build output. The pages are Home, About, Projects, Certifications and Contact; routes are localized under `/it` and `/de`.
@@ -35,7 +35,7 @@ Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an 
 
 Notebook content is a static snapshot in its original language. Viewing it requires no API key, account, Python runtime or external notebook request. Re-executing the source notebooks is separate: Cultural Differences requires the unpublished SPSS survey file; Nasdaq requires a Nasdaq API key in Colab Secrets.
 
-To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. The About page uses the supplied laptop photograph; the homepage uses the supplied finance-themed photograph.
+To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. Home and About use text-led layouts without personal photographs. General social previews use the existing blue logo; project previews retain their chart covers.
 
 ## Contact and documents
 
