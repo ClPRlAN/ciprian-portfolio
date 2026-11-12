@@ -113,7 +113,7 @@ test('Invalid raster data and stripped HTML fall back to text; unsupported MIME 
   assert.throws(() => renderNotebook({}), /cells array/);
 });
 
-for (const name of ['cultural-differences-in-finance', 'nasdaq-financial-data-analysis']) {
+for (const name of ['cultural-differences-in-finance', 'nasdaq-financial-data-analysis', 'industry-classification']) {
   test(`Real ${name} snapshot preserves all cells, code, saved tables and raster charts`, () => {
     const source = JSON.parse(readFileSync(new URL(`../content/notebooks/${name}.ipynb`, import.meta.url), 'utf8'));
     const html = renderNotebook(source);

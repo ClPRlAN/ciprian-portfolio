@@ -31,9 +31,9 @@ Only these source locations are authoritative. There is no nested duplicate appl
 
 ## Projects
 
-Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an internal page with keyboard-accessible Library/Report tabs, a local notebook library, code, tables, saved charts and an embedded PDF report. Without JavaScript, both document sections remain visible. GitHub and Colab remain optional external destinations. The Cultural Differences report is the supplied original PDF; the Nasdaq report is the existing project PDF.
+Industry Classification, Cultural Differences in Finance and Nasdaq Financial Data Analysis each have an internal page with keyboard-accessible Library/Report tabs, a local notebook library, code, tables, saved charts and an embedded PDF report. Without JavaScript, both document sections remain visible. GitHub and Colab remain optional external destinations. All three project reports are the supplied original PDFs, updated on 12 November 2026.
 
-Notebook content is a static snapshot in its original language. Viewing it requires no API key, account, Python runtime or external notebook request. Re-executing the source notebooks is separate: Cultural Differences requires the unpublished SPSS survey file; Nasdaq requires a Nasdaq API key in Colab Secrets.
+Notebook content is a static snapshot in its original language. Viewing it requires no API key, account, Python runtime or external notebook request. Re-executing the source notebooks is separate: Industry Classification requires the unpublished course training files; Cultural Differences requires the unpublished SPSS survey file; Nasdaq requires a Nasdaq API key in Colab Secrets.
 
 To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, then update its pinned commit/source URLs, SHA-256 and metadata in `sources.json`. The build rejects mismatched hashes. Cards currently use real charts from the saved notebooks; future project photographs can replace their `cover` paths. Home and About use text-led layouts without personal photographs. General social previews use the existing blue logo; project previews retain their chart covers.
 
@@ -41,7 +41,7 @@ To update a notebook, copy the new original `.ipynb` into `content/notebooks/`, 
 
 The form uses Formspree `mrpbqerd`; successful submission replaces the form with a translated confirmation. Never place API secrets in the static site. The phone is revealed on request. The public CV URL is `/Ciprian_Loghin_CV.pdf`.
 
-Certificates and academic qualifications link to original PDFs. Years on the diplomas refer to completion (Bachelor 2024; vocational diploma 2018), rather than later document issue dates. The favicon set is crawlable at stable root URLs; search-engine refresh timing is outside the site's control.
+Certificates and academic qualifications link to original PDFs. Years on the diplomas refer to completion (Bachelor 2024; Diploma in Business Services 2018), rather than later document issue dates. The favicon set is crawlable at stable root URLs; search-engine refresh timing is outside the site's control.
 
 ## Validation
 

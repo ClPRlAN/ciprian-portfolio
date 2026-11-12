@@ -24,7 +24,7 @@ export const ui = {
       "cv": "Download CV"
     },
     "hero": {
-      "degree": "MSc Data Science & Finance · University of Zurich",
+      "degree": "MSc Data Science · Minor in Finance · University of Zurich",
       "role": "Business & Financial Analyst",
       "slogan": "Analytics for Real Business Problems",
       "bio": "I use financial and business data to structure complex problems, test assumptions and turn analysis into clear, decision-ready recommendations.",
@@ -42,13 +42,14 @@ export const ui = {
     },
     "about": {
       "title": "I work at the intersection of business, finance and data.",
-      "p1": "My background combines ICT, Data Science and Finance with hands-on experience in business processes, client requirements and stakeholder collaboration. I am interested in the point where analysis stops being an academic exercise and starts improving a real decision.",
-      "p2": "I approach problems by first understanding the business question, then choosing the simplest analytical method that can answer it reliably. That can mean structuring requirements, working through financial drivers, cleaning and analysing data, or translating findings into a recommendation that non-technical stakeholders can use.",
-      "p3": "I am currently pursuing an MSc in Data Science & Finance at the University of Zurich. I am especially interested in roles where analytical depth, commercial awareness and clear communication need to work together.",
+      "p1": "My background brings together technology, business and a decade of hands-on experience across different industries. I’ve helped build a digital marketing venture, worked with clients and taken on operational responsibilities in fast-moving environments. Moving between these settings has taught me to learn quickly, understand different perspectives and take ownership when something needs doing.",
+      "p2": "I approach analysis with that same practical mindset: understand the question, challenge the assumptions and work towards an answer that is useful. At Boomerang, that meant connecting CRM and marketing data with commercial decisions. In my academic projects, it means working through messy datasets, testing statistical relationships and explaining what the results actually support. I enjoy the detail, while keeping sight of the decision behind it.",
+      "p3": "I’m currently pursuing a Master’s in Data Science with a minor in Finance at the University of Zurich, building on my ICT degree from the University of Turin. I’m particularly interested in how data can help us understand businesses, financial behaviour and the choices people make. I bring curiosity, commercial awareness and a willingness to get involved—from the first question through to the practical work of finding an answer.",
       "skills": "Skills",
       "businessFinance": "Business & Finance",
-      "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration"
+      "dataMethods": "Data & Statistical Methods",
+      "programmingTools": "Programming & Tools",
+      "collaborationDelivery": "Collaboration & Delivery"
     },
     "common": {
       "featured": "Featured",
@@ -81,7 +82,7 @@ export const ui = {
       "switchLight": "Switch to light mode",
       "switchDark": "Switch to dark mode",
       "education": "Academic qualifications",
-      "educationIntro": "University and vocational qualifications, with the original diplomas.",
+      "educationIntro": "University and school qualifications, with the original diplomas.",
       "certificationIntro": "Professional and technical certifications.",
       "contactError": "Unable to send the message right now. Please use email.",
       "closeMenu": "Close menu",
@@ -133,7 +134,7 @@ export const ui = {
       "cv": "Scarica CV"
     },
     "hero": {
-      "degree": "MSc Data Science & Finance · University of Zurich",
+      "degree": "Master in Data Science · Minor in Finance · Università di Zurigo",
       "role": "Business & Financial Analyst",
       "slogan": "Analisi per problemi aziendali reali",
       "bio": "Uso dati finanziari e aziendali per strutturare problemi complessi, mettere alla prova le ipotesi e trasformare l'analisi in raccomandazioni chiare e pronte a supportare le decisioni.",
@@ -151,13 +152,14 @@ export const ui = {
     },
     "about": {
       "title": "Lavoro all'intersezione tra business, finanza e dati.",
-      "p1": "Il mio percorso combina ICT, Data Science e Finance con esperienza pratica nei processi aziendali, nella raccolta dei requisiti e nella collaborazione con stakeholder. Mi interessa soprattutto il momento in cui l'analisi smette di essere un esercizio teorico e inizia a migliorare una decisione reale.",
-      "p2": "Affronto i problemi partendo dalla domanda di business e scegliendo poi il metodo analitico più semplice che possa rispondere in modo affidabile. Può significare strutturare requisiti, analizzare driver finanziari, pulire e interpretare dati oppure tradurre i risultati in una raccomandazione comprensibile anche a interlocutori non tecnici.",
-      "p3": "Attualmente frequento l'MSc in Data Science & Finance presso l'University of Zurich. Mi interessano in particolare ruoli in cui profondità analitica, comprensione commerciale e comunicazione chiara devono lavorare insieme.",
+      "p1": "Il mio percorso unisce tecnologia, business e un decennio di esperienza pratica in settori diversi. Ho contribuito a costruire un’attività di marketing digitale, lavorato con i clienti e assunto responsabilità operative in contesti dinamici. Passare da un ambiente all’altro mi ha insegnato a imparare rapidamente, comprendere prospettive diverse e prendere l’iniziativa quando c’è qualcosa da fare.",
+      "p2": "Affronto l’analisi con lo stesso approccio pratico: comprendere la domanda, mettere in discussione le ipotesi e arrivare a una risposta utile. In Boomerang questo significava collegare i dati CRM e di marketing alle decisioni commerciali. Nei miei progetti accademici significa lavorare con dataset disordinati, verificare relazioni statistiche e spiegare che cosa i risultati consentono davvero di affermare. Mi piace approfondire i dettagli, senza perdere di vista la decisione che c’è dietro.",
+      "p3": "Attualmente frequento un Master in Data Science con minor in Finance presso l’Università di Zurigo, proseguendo il percorso iniziato con la laurea in ICT all’Università di Torino. Mi interessa in particolare come i dati possano aiutarci a comprendere le imprese, i comportamenti finanziari e le scelte delle persone. Porto curiosità, consapevolezza commerciale e voglia di mettermi in gioco, dalla prima domanda fino al lavoro concreto necessario per trovare una risposta.",
       "skills": "Competenze",
-      "businessFinance": "Business & Finance",
-      "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration"
+      "businessFinance": "Business e finanza",
+      "dataMethods": "Dati e metodi statistici",
+      "programmingTools": "Programmazione e strumenti",
+      "collaborationDelivery": "Collaborazione e realizzazione"
     },
     "common": {
       "featured": "In evidenza",
@@ -190,7 +192,7 @@ export const ui = {
       "switchLight": "Passa al tema chiaro",
       "switchDark": "Passa al tema scuro",
       "education": "Titoli di studio",
-      "educationIntro": "Formazione universitaria e professionale, con i diplomi originali.",
+      "educationIntro": "Titoli universitari e scolastici, con i diplomi originali.",
       "certificationIntro": "Certificazioni professionali e tecniche.",
       "contactError": "Impossibile inviare il messaggio in questo momento. Contattami via email.",
       "closeMenu": "Chiudi menu",
@@ -242,7 +244,7 @@ export const ui = {
       "cv": "CV herunterladen"
     },
     "hero": {
-      "degree": "MSc Data Science & Finance · University of Zurich",
+      "degree": "MSc Data Science · Nebenfach Finance · Universität Zürich",
       "role": "Business & Financial Analyst",
       "slogan": "Analytics für reale Geschäftsprobleme",
       "bio": "Ich nutze Finanz- und Unternehmensdaten, um komplexe Probleme zu strukturieren, Annahmen zu prüfen und Analysen in klare, entscheidungsreife Empfehlungen zu übersetzen.",
@@ -260,13 +262,14 @@ export const ui = {
     },
     "about": {
       "title": "Ich arbeite an der Schnittstelle von Business, Finance und Daten.",
-      "p1": "Mein Hintergrund verbindet ICT, Data Science und Finance mit praktischer Erfahrung in Geschäftsprozessen, Anforderungsaufnahme und Stakeholder-Zusammenarbeit. Besonders interessiert mich der Punkt, an dem Analyse nicht mehr nur Theorie ist, sondern eine reale Entscheidung verbessert.",
-      "p2": "Ich beginne mit der Business-Frage und wähle anschließend die einfachste analytische Methode, die sie verlässlich beantworten kann. Das kann bedeuten, Anforderungen zu strukturieren, finanzielle Treiber zu untersuchen, Daten zu bereinigen und auszuwerten oder Ergebnisse in eine verständliche Handlungsempfehlung zu übersetzen.",
-      "p3": "Derzeit absolviere ich den MSc Data Science & Finance an der University of Zurich. Besonders interessieren mich Rollen, in denen analytische Tiefe, wirtschaftliches Verständnis und klare Kommunikation zusammenkommen.",
+      "p1": "Mein Hintergrund verbindet Technologie, Business und ein Jahrzehnt praktischer Erfahrung in verschiedenen Branchen. Ich habe am Aufbau eines Unternehmens für digitales Marketing mitgewirkt, mit Kunden gearbeitet und operative Verantwortung in dynamischen Arbeitsumgebungen übernommen. Der Wechsel zwischen diesen Bereichen hat mich gelehrt, schnell zu lernen, unterschiedliche Perspektiven zu verstehen und Verantwortung zu übernehmen, wenn etwas getan werden muss.",
+      "p2": "Mit derselben praxisnahen Haltung gehe ich an Analysen heran: die Frage verstehen, Annahmen hinterfragen und auf eine nützliche Antwort hinarbeiten. Bei Boomerang bedeutete das, CRM- und Marketingdaten mit geschäftlichen Entscheidungen zu verknüpfen. In meinen akademischen Projekten bedeutet es, unübersichtliche Datensätze aufzuarbeiten, statistische Zusammenhänge zu prüfen und zu erklären, welche Aussagen die Ergebnisse tatsächlich stützen. Ich gehe gerne ins Detail, ohne die dahinterstehende Entscheidung aus dem Blick zu verlieren.",
+      "p3": "Derzeit studiere ich im Master Data Science mit Nebenfach Finance an der Universität Zürich, aufbauend auf meinem ICT-Abschluss an der Universität Turin. Mich interessiert besonders, wie Daten uns helfen können, Unternehmen, finanzielles Verhalten und die Entscheidungen von Menschen zu verstehen. Ich bringe Neugier, wirtschaftliches Verständnis und die Bereitschaft mit, mich einzubringen – von der ersten Frage bis zur praktischen Arbeit an einer Antwort.",
       "skills": "Kompetenzen",
-      "businessFinance": "Business & Finance",
-      "dataAnalytics": "Data & Analytics",
-      "toolsCollaboration": "Tools & Collaboration"
+      "businessFinance": "Business und Finanzen",
+      "dataMethods": "Daten und statistische Methoden",
+      "programmingTools": "Programmierung und Tools",
+      "collaborationDelivery": "Zusammenarbeit und Umsetzung"
     },
     "common": {
       "featured": "Ausgewählt",
@@ -299,7 +302,7 @@ export const ui = {
       "switchLight": "Zum hellen Design wechseln",
       "switchDark": "Zum dunklen Design wechseln",
       "education": "Bildungsabschlüsse",
-      "educationIntro": "Hochschul- und Berufsabschlüsse mit den Originaldiplomen.",
+      "educationIntro": "Hochschul- und Schulabschlüsse mit den Originaldiplomen.",
       "certificationIntro": "Berufliche und technische Zertifikate.",
       "contactError": "Die Nachricht konnte derzeit nicht gesendet werden. Bitte kontaktieren Sie mich per E-Mail.",
       "closeMenu": "Menü schließen",
@@ -347,32 +350,68 @@ export const skills = {
   "business": [
     "Business Analysis",
     "Financial Analysis",
-    "Business Requirements",
-    "Stakeholder Management",
-    "Process Improvement",
-    "Data-driven Decision Making"
+    "CRM Analytics",
+    "Requirements Gathering",
+    "Business Development",
+    "Process Improvement"
   ],
   "data": [
+    "Exploratory Data Analysis",
+    "Statistical Modelling",
+    "Regression Analysis",
+    "Data Cleaning & Validation",
+    "Machine Learning Foundations",
+    "Data Visualisation"
+  ],
+  "programming": [
     "Python",
     "SQL",
+    "Pandas",
+    "NumPy",
+    "Statsmodels",
     "PySpark",
     "Power BI",
-    "Data Analysis",
-    "Machine Learning",
-    "Probability & Statistics"
+    "Excel",
+    "Matplotlib",
+    "REST APIs"
   ],
-  "tools": [
-    "Microsoft 365",
-    "Google Workspace",
-    "Miro",
-    "Figma",
-    "Notion",
-    "Canva",
-    "XLeap"
+  "collaboration": [
+    "Stakeholder Communication",
+    "Cross-functional Collaboration",
+    "Practical Problem-solving",
+    "Adaptability",
+    "Team Coordination",
+    "Ownership"
   ]
 };
 
 export const projects = [
+  {
+    "slug": "industry-classification",
+    "featured": true,
+    "year": "2026",
+    "cover": "/images/projects/industry-classification.png",
+    "title": {
+      "en": "Industry Classification",
+      "it": "Industry Classification",
+      "de": "Industry Classification"
+    },
+    "description": {
+      "en": "Company industry classification across 25 industries using text embeddings, logistic regression and nearest neighbors, with financial ratios used to calibrate prediction confidence.",
+      "it": "Classificazione di aziende in 25 settori tramite embedding testuali, regressione logistica e nearest neighbors, con indici finanziari usati per calibrare la confidenza delle previsioni.",
+      "de": "Klassifikation von Unternehmen in 25 Branchen anhand von Text-Embeddings, logistischer Regression und nächsten Nachbarn, mit Finanzkennzahlen zur Kalibrierung der Vorhersagesicherheit."
+    },
+    "tools": [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "Seaborn"
+    ],
+    "github": "https://github.com/ClPRlAN/Industry-Classification",
+    "colab": "https://colab.research.google.com/github/ClPRlAN/Industry-Classification/blob/main/industry_classification.ipynb",
+    "reportPdf": "/pdfs/projects/industry-classification.pdf",
+    "notebookFile": "industry-classification.ipynb"
+  },
   {
     "slug": "cultural-differences-in-finance",
     "featured": true,
@@ -489,7 +528,7 @@ export const certifications = [
     "pdf": "/pdfs/certifications/itil4-direct-plan-improve.pdf"
   },
   {
-    "title": "Vocational Diploma in Business Services",
+    "title": "Diploma in Business Services",
     "issuer": "Sella-Aalto-Lagrange School, Turin",
     "year": "2018",
     "category": "education",

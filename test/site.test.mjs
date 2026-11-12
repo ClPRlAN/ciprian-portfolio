@@ -14,9 +14,10 @@ function walk(directory) {
   });
 }
 const pages = walk(dist).filter(filename => filename.endsWith('/index.html'));
+const expectedPageCount = (5 + projects.length) * Object.keys(languages).length;
 
 test('all localized pages, metadata and internal resources are complete', () => {
-  assert.equal(pages.length, 21);
+  assert.equal(pages.length, expectedPageCount);
   for (const filename of pages) {
     const html = fs.readFileSync(filename, 'utf8');
     const relative = path.relative(dist, filename);
@@ -72,7 +73,7 @@ test('certificates, qualifications, CV, contact and favicon destinations are pub
     assert.ok(fs.statSync(path.join(dist,file)).size > 0);
   }
   const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 21);
+  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedPageCount);
   assert.doesNotMatch(sitemap, /crunchbase|presentations|research/);
 });
 

@@ -1,6 +1,6 @@
 # Search visibility for Ciprian Loghin
 
-The site is a personal portfolio for a Business & Financial Analyst based in Zurich, Switzerland, currently pursuing an MSc in Data Science & Finance at the University of Zurich. Metadata must continue to reflect that status accurately. Search placement is decided by Google; technical improvements cannot guarantee first place or a particular indexing date.
+The site is a personal portfolio for a Business & Financial Analyst based in Zurich, Switzerland, currently pursuing an MSc in Data Science with a minor in Finance at the University of Zurich. Metadata must continue to reflect that status accurately. Search placement is decided by Google; technical improvements cannot guarantee first place or a particular indexing date.
 
 ## Implemented
 

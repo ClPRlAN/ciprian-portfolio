@@ -55,5 +55,35 @@
       "Google Colab userdata",
       "NASDAQ_API_KEY secret"
     ]
+  },
+  "industry-classification": {
+    "repository": "https://github.com/ClPRlAN/Industry-Classification",
+    "ref": "main",
+    "commit": "fa9070a6eab03c86d2838ff486c2e52037b62b06",
+    "commitDate": "2026-11-12T10:12:14+01:00",
+    "sourcePath": "industry_classification.ipynb",
+    "sourceUrl": "https://github.com/ClPRlAN/Industry-Classification/blob/fa9070a6eab03c86d2838ff486c2e52037b62b06/industry_classification.ipynb",
+    "rawUrl": "https://raw.githubusercontent.com/ClPRlAN/Industry-Classification/fa9070a6eab03c86d2838ff486c2e52037b62b06/industry_classification.ipynb",
+    "localFile": "industry-classification.ipynb",
+    "sha256": "c9fd52754b19e4ad6df2ff80d9ac269c6a2147bb18ba93153da9389cda8c3e66",
+    "sizeBytes": 1430729,
+    "cells": 47,
+    "outputMimeTypes": {
+      "text/plain": 22,
+      "text/html": 11,
+      "image/png": 8
+    },
+    "renderMode": "Saved notebook source and outputs; no code execution or live API calls.",
+    "runtimeRequirements": [
+      "Python 3.12 (source kernel 3.12.14)",
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "seaborn",
+      "matplotlib",
+      "IPython",
+      "threadpoolctl",
+      "Trusted course files data/df_train.pkl and data/df_financials_train.pkl (not published in source repository)"
+    ]
   }
 }
